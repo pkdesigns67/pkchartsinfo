@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Bitmap</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="40" height="40"></rect>
+        <linearGradient x1="13.2858783%" y1="39.7396477%" x2="80.9171248%" y2="90.4587035%" id="linearGradient-3">
+            <stop stop-color="#FFE7E4" offset="0%"></stop>
+            <stop stop-color="#D41200" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="13.2858783%" y1="0%" x2="80.9171248%" y2="247.1604%" id="linearGradient-4">
+            <stop stop-color="#FFE7E4" offset="0%"></stop>
+            <stop stop-color="#D41200" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="13.2858783%" y1="36.7755102%" x2="80.9171248%" y2="102.146914%" id="linearGradient-5">
+            <stop stop-color="#FFE7E4" offset="0%"></stop>
+            <stop stop-color="#D41200" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="_1200_06_Top_Artists" transform="translate(-908.000000, -1515.000000)">
+            <g id="Platform-Copy" transform="translate(849.000000, 1382.000000)">
+                <g id="03" transform="translate(59.000000, 133.000000)">
+                    <g id="Bitmap">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+                        <g id="HipHopRadio" mask="url(#mask-2)">
+                            <g transform="translate(3.000000, 6.000000)">
+                                <path d="M27,0 C28.6568542,-3.04359188e-16 30,1.34314575 30,3 L30,8 C30,9.35359075 29.1035434,10.4978028 27.8719483,10.8713181 C27.9550018,10.5960171 28,10.3032635 28,10 L28,10 L28,5 C28,3.34314575 26.6568542,2 25,2 L25,2 L11,2 C9.34314575,2 8,3.34314575 8,5 L8,5 L8,10 C8,10.3032635 8.04499817,10.5960171 8.12868191,10.8719483 C6.89645663,10.4978028 6,9.35359075 6,8 L6,3 C6,1.34314575 7.34314575,3.04359188e-16 9,0 L27,0 Z" id="Combined-Shape" fill="url(#linearGradient-3)"></path>
+                                <rect id="Rectangle-Copy-84" fill="url(#linearGradient-4)" x="9" y="6" width="2" height="2"></rect>
+                                <rect id="Rectangle-Copy-85" fill="url(#linearGradient-4)" x="13" y="6" width="2" height="2"></rect>
+                                <rect id="Rectangle-Copy-86" fill="url(#linearGradient-4)" x="17" y="6" width="2" height="2"></rect>
+                                <rect id="Rectangle-Copy-88" fill="url(#linearGradient-4)" x="21" y="6" width="2" height="2"></rect>
+                                <rect id="Rectangle-Copy-89" fill="url(#linearGradient-4)" x="25" y="6" width="2" height="2"></rect>
+                                <path d="M31,7 C33.209139,7 35,8.790861 35,11 L35,21 C35,23.209139 33.209139,25 31,25 L4,25 C1.790861,25 2.705415e-16,23.209139 0,21 L0,11 C-2.705415e-16,8.790861 1.790861,7 4,7 L31,7 Z M20.3450574,19.6486486 L15.1343947,19.6486486 C13.9253389,19.6486486 12.9452055,20.628782 12.9452055,21.8378378 C12.9452055,23.0468936 13.9253389,24.027027 15.1343947,24.027027 L15.1343947,24.027027 L20.3450574,24.027027 C21.5541132,24.027027 22.5342466,23.0468936 22.5342466,21.8378378 C22.5342466,20.628782 21.5541132,19.6486486 20.3450574,19.6486486 L20.3450574,19.6486486 Z M6.95205479,10.8918919 C3.90692313,10.8918919 1.43835616,13.3966772 1.43835616,16.4864865 C1.43835616,19.5762958 3.90692313,22.0810811 6.95205479,22.0810811 C9.99718646,22.0810811 12.4657534,19.5762958 12.4657534,16.4864865 C12.4657534,13.3966772 9.99718646,10.8918919 6.95205479,10.8918919 Z M28.5273973,10.8918919 C25.4822656,10.8918919 23.0136986,13.3966772 23.0136986,16.4864865 C23.0136986,19.5762958 25.4822656,22.0810811 28.5273973,22.0810811 C31.5725289,22.0810811 34.0410959,19.5762958 34.0410959,16.4864865 C34.0410959,13.3966772 31.5725289,10.8918919 28.5273973,10.8918919 Z M21.3180304,10.8918919 L14.1614217,10.8918919 C13.489724,10.8918919 12.9452055,11.4364104 12.9452055,12.1081081 C12.9452055,12.7798058 13.489724,13.3243243 14.1614217,13.3243243 L14.1614217,13.3243243 L21.3180304,13.3243243 C21.989728,13.3243243 22.5342466,12.7798058 22.5342466,12.1081081 C22.5342466,11.4364104 21.989728,10.8918919 21.3180304,10.8918919 L21.3180304,10.8918919 Z" id="Combined-Shape" fill="url(#linearGradient-5)"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

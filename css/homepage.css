@@ -1,0 +1,93 @@
+.info-detail-artist-numbers {
+    color: #8a8a8a;
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center
+}
+
+@media (min-width:576px) {
+    .info-detail-artist-numbers {
+        font-size: 30px;
+        line-height: 35px
+    }
+}
+
+@media (min-width:1200px) {
+    .info-detail-artist-numbers {
+        font-size: 25px;
+        line-height: 38px
+    }
+}
+
+.label-320-text {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 41px;
+    text-shadow: 4px 4px rgba(0, 0, 0, .25);
+    text-align: center
+}
+
+@media (min-width:576px) {
+    .label-320-text {
+        font-family: Roboto;
+        font-size: 48px;
+        font-style: italic;
+        font-weight: 900;
+        line-height: 60px;
+        text-align: center;
+        text-shadow: 2px 3px rgba(0, 0, 0, .25)
+    }
+}
+
+@media (min-width:992px) {
+    .label-320-text {
+        font-family: Roboto;
+        font-size: 66px;
+        line-height: 78px
+    }
+}
+
+.home-grad-box {
+    height: 131px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(/static/images/intro_img.jpg)
+}
+
+@media (min-width:576px) {
+    .home-grad-box {
+        height: 170px
+    }
+}
+
+@media (min-width:768px) {
+    .home-grad-box {
+        background-image: url(/static/images/intro_img_768.png)
+    }
+}
+
+@media (min-width:992px) {
+    .home-grad-box {
+        height: 210px
+    }
+}
+
+@media (min-width:1200px) {
+    .home-grad-box {
+        height: 288px;
+        background-image: url(/static/images/web_intro_large.png);
+        box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, .2)
+    }
+}
+
+@media (min-width:1200px) {
+    .home-grad-box .label-320-text {
+        font-family: Roboto;
+        font-size: 70px;
+        line-height: 98px
+    }
+}

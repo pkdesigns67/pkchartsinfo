@@ -1,0 +1,5758 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, minimal-ui, initial-scale=1, maximum-scale=5" name="viewport">
+    <meta content="" name="theme-color">
+    <link href="./rank-info-all.htm" rel="canonical">
+    <title>High Heat en las listas | pkdcharts</title>
+    <link href="https://cdn.top-charts.com/static/images/fav.png" rel="shortcut icon" type="image/png">
+    <link href="https://fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="https://ajax.googleapis.com/" rel="dns-prefetch">
+    <link href="./rank-info-all/css/main.css"
+        rel="stylesheet">
+    <link href="./rank-info-all/css/navbar.css"
+        rel="stylesheet">
+    <style>
+        @media (max-width: 992px) {
+            .li:not(.show) {
+                display: none;
+            }
+
+            .navbar-collapse {
+                flex-basis: 0;
+                width: fit-content;
+                flex-grow: 0;
+            }
+
+            .navbar-brand {
+                margin-right: 0;
+            }
+
+            .hide-992 {
+                display: none !important;
+            }
+
+            .margin-hamb {
+                margin-right: 8px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .border-col-search {
+                border-color: transparent !important;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .show-992 {
+                display: flex;
+            }
+
+            .flex-grow-992 {
+                flex-grow: 1;
+            }
+        }
+
+        .search-grad,
+        .search-grad:before {
+            background: linear-gradient(237.66deg, #813D3D 0%, #FF8D8D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: initial;
+            /* reset Font Awesome's display:inline-block */
+        }
+
+        /* background: linear-gradient(487.66deg, #f9f4f4, #fdd7d7 100%); */
+        .top-charts-header-font {
+            width: 74px;
+            color: #707d8a !important;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+
+        .image-on-bar {
+            height: 53px;
+            width: 52px;
+            border-radius: 6px;
+            background: linear-gradient(313.06deg, rgba(172, 38, 38, 0.5) 0%, rgba(255, 255, 255, 0) 37.87%, rgba(255, 255, 255, 0.25) 71.36%, rgba(255, 255, 255, 0.5) 100%);
+        }
+
+        .rank-position-icon {
+            width: 19px;
+            height: 19px;
+        }
+
+        @media (min-width: 576px) {
+            .image-on-bar {
+                height: 72px;
+                width: 71px;
+            }
+
+            .rank-position-icon {
+                height: 26px;
+                width: auto;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .image-on-bar {
+                height: 79px;
+                width: 78px;
+            }
+
+            .rank-position-icon {
+                height: 30px;
+                width: auto;
+            }
+        }
+
+        .song-card {
+            border-radius: 5px;
+            background-color: #FFFFFF;
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.09);
+        }
+
+        body {
+            background-color: #F9F9F9;
+        }
+
+        .marg-alb-card {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .song-text {
+            color: #6C6C6C;
+            /*#383d41e3;*/
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 15px;
+            margin-bottom: 2%;
+        }
+
+        @media (min-width: 576px) {
+            .song-text {
+                margin-bottom: 1%;
+                font-size: 17px;
+                line-height: 20px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .song-text {
+                margin-bottom: 1%;
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .song-text {
+                font-size: 23px;
+                font-weight: bold;
+                line-height: 27px;
+            }
+        }
+
+        .artist-text {
+            color: #434343b5;
+            font-family: Roboto;
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        @media (min-width: 576px) {
+            .artist-text {
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .artist-text {
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .artist-text {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .no-wrap {
+                flex-wrap: nowrap;
+            }
+        }
+
+        .cont-song-margin {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        @media (min-width: 576px) {
+            .cont-song-margin {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+        }
+
+        .songs-margin {
+            margin-bottom: 5px;
+        }
+
+        .top-chart-title-style {
+            background-color: white;
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, .09);
+        }
+
+        @media (min-width: 576px) {
+            .top-chart-title-style {
+                margin-left: 15px;
+                margin-right: 15px;
+                border-radius: 5px;
+                background-color: white;
+                box-shadow: 0 1px 0 0 rgba(0, 0, 0, .09);
+            }
+        }
+
+        .song-size {
+            min-height: 60px;
+        }
+
+        @media (min-width: 576px) {
+            .song-size {
+                min-height: 80px;
+            }
+        }
+
+        .container-img-text {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        /* Bottom left text */
+        .bottom-left {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+        }
+
+        /* Top left text */
+        .top-left {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
+
+        /* Top right text */
+        .top-right {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+        }
+
+        /* Bottom right text */
+        .bottom-right {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+        }
+
+        /* Centered text */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .play-icon-size {
+            font-size: 30px;
+        }
+
+        @media (min-width: 1200px) {
+            .play-icon-size {
+                font-size: 45px;
+            }
+        }
+
+        .icon-size-label {
+            font-size: 35px;
+        }
+
+        .top-chart-title-text {
+            background: -webkit-linear-gradient(130deg, rgba(178, 70, 70, 1) 0%, rgba(252, 114, 114, 0.72) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 900;
+            line-height: 18px;
+            text-shadow: 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 576px) {
+            .top-chart-title-text {
+                font-size: 21px;
+                line-height: 24px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .top-chart-title-text {
+                font-size: 24px;
+                line-height: 32px;
+            }
+        }
+
+        .top-chart-country-text {
+            font-family: Roboto;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 14px;
+            text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
+            background: -webkit-linear-gradient(130deg, rgba(178, 70, 70, 1) 0%, rgba(252, 114, 114, 0.72) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0);
+        }
+
+        @media (min-width: 576px) {
+            .top-chart-country-text {
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .top-chart-country-text {
+                font-size: 21px;
+                line-height: 24px;
+            }
+        }
+
+        .module {
+            background: #222;
+            color: white;
+            padding: 2rem;
+        }
+
+        /*View all button*/
+        .module-border-wrap {
+            display: flex;
+            position: relative;
+            background: linear-gradient(76deg, rgba(255, 231, 228, 1) 0%, rgba(212, 18, 0, 1) 100%);
+            ;
+            padding: 1px;
+            width: fit-content;
+            border-radius: 11px;
+        }
+
+        .module-border-wrap .view-all-style {
+            border-radius: 9px;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 12px;
+            line-height: 14px;
+            color: #adb5bd;
+            background-color: white;
+            width: 4.7rem;
+        }
+
+        .view-all-style span {
+            margin-right: 5px;
+        }
+
+        @media (min-width: 576px) {
+            .module-border-wrap .view-all-style {
+                width: 5.9rem;
+                font-size: 15px;
+                line-height: 18px;
+                height: 30px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .module-border-wrap .view-all-style {
+                width: 105px;
+                height: 33px;
+                font-size: 15px;
+                line-height: 18px;
+            }
+        }
+
+        .title-row-style {
+            box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .row-title {
+            height: 55px;
+        }
+
+        @media (min-width: 576px) {
+            .row-title {
+                height: 70px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .row-title {
+                height: 79px;
+            }
+        }
+
+        .search-cont {
+            border-radius: 100px 0 0 100px;
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        @media (min-width: 992px) {
+            .search-cont {
+                border-radius: 0;
+                background-color: white;
+                box-shadow: 0 0 0 0;
+            }
+        }
+
+        .navbar-details {
+            background-color: white;
+            height: fit-content;
+            padding: 0;
+            padding-left: .5rem;
+        }
+
+        .container-bot-border:after {
+            content: "";
+            background: -webkit-linear-gradient(130deg, rgba(252, 114, 114, 1) 0%, rgba(178, 70, 70, 1) 100%);
+            height: 2px;
+            width: inherit;
+            position: absolute;
+        }
+
+        .drop-colour {
+            color: #b9b8b8;
+        }
+
+        .top-left-corner {
+            position: absolute;
+            top: 0;
+            left: -12px;
+        }
+
+        @media (max-width: 576px) {
+            .search-icon-size {
+                height: 29px;
+            }
+        }
+
+        .see-all-top-100 {
+            color: #9B9B9B;
+            font-family: Roboto;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 14px;
+        }
+
+        @media (min-width: 576px) {
+            .see-all-top-100 {
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .see-all-top-100 {
+                font-size: 17px;
+                line-height: 20px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .see-all-top-100 {
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+
+        .fa-gradient {
+            background: -webkit-linear-gradient(133.29deg, #FC7272 0%, #B24646 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .img-size {
+            max-width: 78px;
+        }
+
+        @media (min-width: 576px) {
+            .img-size {
+                max-width: fit-content;
+                max-width: -moz-fit-content;
+            }
+        }
+
+        /*Top Header container*/
+        .container-header-size {
+            padding: 0;
+            background-color: white;
+        }
+
+        .top-song-banner {
+            height: 141px;
+            width: 110px;
+            color: white;
+            font-family: Righteous, serif;
+            font-size: 114px;
+            line-height: 141px;
+            text-align: right;
+            text-shadow: 6px 6px 0 rgba(0, 0, 0, 0.33);
+        }
+
+        .image-top-song-banner {
+            height: 86px;
+            width: 85px;
+            border: 2px solid white;
+            background: linear-gradient(313.06deg, rgba(172, 38, 38, 0.5) 0%, rgba(255, 255, 255, 0) 37.87%, rgba(255, 255, 255, 0.25) 71.36%, rgba(255, 255, 255, 0.5) 100%);
+        }
+
+        .charts-genre-header {
+            height: 80px;
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, .09);
+        }
+
+        .charts-genre-square {
+            height: 33vw;
+            background-repeat: no-repeat;
+            ;
+            background-size: cover;
+            color: #FFFFFFFF;
+            font-family: Lobster;
+            font-size: 5vw;
+            line-height: 20px;
+            text-align: center;
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.23);
+        }
+
+        @media (min-width: 576px) {
+            .charts-genre-square {
+                height: 25vw;
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .charts-genre-square {
+                height: 17vw;
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+
+        .overlay-v2 {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(313.06deg, rgba(172, 38, 38, 0.5) 0%, rgba(255, 255, 255, 0) 37.87%, rgba(255, 255, 255, 0.25) 71.36%, rgba(255, 255, 255, 0.5) 100%);
+            opacity: 0.7;
+            position: absolute;
+        }
+
+        .overlay-white-transp {
+            width: 100%;
+            height: 100%;
+            background: white;
+            opacity: 0.3;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .genre-card-z {
+            z-index: 1;
+        }
+
+        @media (min-width: 300px) and (max-width: 728px) {
+            .lawmaker-300 {
+                display: flex !important;
+                height: auto;
+                width: 300px;
+                background-color: #F9F9F9;
+                border-radius: 10px;
+            }
+        }
+
+        @media (min-width: 728px) {
+            .lawmaker-728 {
+                display: flex !important;
+                height: auto;
+                width: 728px;
+                background-color: white;
+                border-radius: 10px;
+                background-color: #F9F9F9;
+            }
+        }
+
+        @media (min-width: 970px) {
+            .lawmaker-970 {
+                display: flex !important;
+                justify-content: center;
+                height: auto;
+                width: 970px;
+                background-color: #F9F9F9;
+            }
+        }
+
+        /*lateral ads*/
+        .lawmaker-lateral-300-600 {
+            height: auto;
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        .lateral-ads-larger {
+            height: 600px;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        /*end lateral ads*/
+        .ads-top-search {
+            height: 136px;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .ads-576 {
+            height: 140px;
+            border-radius: 8px;
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.07);
+            display: none;
+        }
+
+        .lawmaker-lateral-338-280 {
+            height: auto;
+            width: 338px;
+            border-radius: 8px;
+            display: flex;
+        }
+
+        @media (min-width: 300px) and (max-width: 768px) {
+            .lawmaker-320-100 {
+                height: auto;
+                width: 320px;
+                border-radius: 8px;
+                background-color: #FFFFFF;
+                box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.07);
+                display: flex;
+            }
+        }
+
+        .lawmaker-320-50 {
+            height: 100px;
+            width: 320px;
+            border-radius: 8px;
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.07);
+            display: flex;
+        }
+
+        @media (min-width: 576px) {
+            .ads-576 {
+                display: flex;
+            }
+
+            .ads-768 {
+                display: none;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .ads-576 {
+                display: none;
+            }
+
+            .ads-768 {
+                display: flex;
+            }
+        }
+
+        .top-song-header {
+            display: none;
+        }
+
+        @media (min-width: 576px) {
+            .top-song-header {
+                display: flex;
+            }
+
+            .top-song-header .row {
+                display: flex;
+            }
+        }
+
+        .footer-infos-text a {
+            color: rgba(0, 0, 0, .5);
+            font-family: Roboto;
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        @media (min-width: 576px) {
+            .footer-infos-text a {
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .footer-infos-text a {
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+
+        .footer-social-icon {
+            background: white;
+            width: 30px;
+            padding: 8px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 3pt 1pt #e88891;
+            color: rgba(0, 0, 0, .5);
+        }
+
+        .footer-social-icon:hover {
+            background-color: yellow;
+        }
+
+        .footer-copyrights {
+            height: 32px;
+            background: linear-gradient(133.29deg, rgba(114, 252, 233, 0.72) 0%, #4661B2 100%);            
+            box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.23);
+            font-size: 12px;
+            color: #FFFFFF;
+        }
+
+        @media (min-width: 576px) {
+            .footer-copyrights {
+                height: 58px;
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .footer-copyrights {
+                height: 63px;
+                font-size: 19px;
+            }
+        }
+
+        /*border footer 1*/
+        .container-footer-copyright-border {
+            background: linear-gradient(180.91deg, #5e7313 0%, #12DCE6 100%);            
+            height: 3px;
+            display: flex;
+        }
+
+        /*border continuous*/
+        .container-border-genre {
+            background: linear-gradient(180.91deg, #5e7313 0%, #12DCE6 100%);            
+            height: 2px;
+            display: flex;
+        }
+
+        .container-border-genre-descontinous {
+            background: linear-gradient(180.91deg, #5e7313 0%, #12DCE6 100%);            
+            height: 3px;
+        }
+
+        @media (min-width: 1200px) {
+            .container-border-genre {
+                display: flex;
+            }
+
+            .container-border-genre-descontinous {
+                height: 4px;
+            }
+        }
+
+        /*Border discontinuous*/
+        .container-border-tops-576-1200 {
+            background: linear-gradient(180.91deg, #5e7313 0%, #12DCE6 100%);            
+            height: 2px;
+            display: none;
+            border-radius: 5px;
+        }
+
+        .container-border-tops-320-576 {
+            background: linear-gradient(180.91deg, #FFFFFF 0%, #F3A7A0 100%);
+            height: 2px;
+        }
+
+        @media (min-width: 576px) {
+            .container-border-tops-320-576 {
+                display: none;
+            }
+
+            .container-border-tops-576-1200 {
+                display: flex;
+            }
+
+            .container-border-genre {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container-border-tops-576-1200 {
+                height: 4px;
+            }
+        }
+
+        .container-footer-overlay {
+            background: linear-gradient(180deg, rgba(255, 255, 255, .6) 0, rgba(255, 255, 255, 0) 100%);
+            opacity: .7;
+            border-radius: 100px/50px;
+        }
+
+        .youtube-border-top {
+            content: '';
+            background: linear-gradient(133.29deg, #FC7272 0%, #B24646 100%);
+            height: 2px;
+            width: 100%;
+            position: absolute;
+        }
+
+        .youtube-resolution {
+            height: 57vw;
+            width: 100%;
+        }
+
+        @media (min-width: 992px) {
+            .youtube-resolution {
+                height: 56vw;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .youtube-resolution {
+                height: 479px;
+            }
+        }
+
+        .footer-social {}
+
+        @media (min-width: 576px) {
+            .footer-social {
+                height: 110px;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .footer-social {
+                height: 90px;
+            }
+        }
+
+        .top-chart-label-text-song {
+            color: #FFFFFF;
+            font-family: Roboto;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 24px;
+        }
+
+        .top-chart-label-text-artist {
+            height: 19px;
+            width: 201px;
+            color: #FFFFFF;
+            font-family: Roboto;
+            font-size: 16px;
+            line-height: 19px;
+        }
+
+        .icon-top-label {
+            height: 30px;
+            width: 30px;
+        }
+
+        .top-chart-label-date-text {
+            height: 16px;
+            width: 201px;
+            color: #434343;
+            font-family: Roboto;
+            font-size: 14px;
+            line-height: 16px;
+            text-align: right;
+        }
+
+        .top-chart-label-col-witdh {
+            max-width: 142px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-social-icon-space {
+                max-width: fit-content;
+            }
+        }
+
+        .header-titles-text {
+            color: #434343;
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 18px;
+            text-align: center;
+        }
+
+        @media (min-width: 1200px) {
+            .header-titles-text {
+                color: #8E8E8E;
+                font-family: Roboto;
+                font-size: 18px;
+                line-height: 21px;
+                text-align: center;
+            }
+        }
+
+        .header-text-active-border {
+            border-bottom: 3px solid #F06B6B;
+        }
+
+        @media (min-width: 1200px) {
+            .header-text-active-border:after {
+                width: 100px;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .header-search-border {
+                border-radius: 20px;
+                box-shadow: inset 0 2px 1px 0 rgba(0, 0, 0, 0.19);
+            }
+        }
+
+        @media (min-width: 576px) {
+            .header-search-input {
+                background-color: transparent;
+            }
+
+            .header-search-input:focus {
+                box-shadow: 0 0 0;
+                background-color: transparent;
+            }
+        }
+
+        .overlay-grad-flag {
+            background: linear-gradient(321.51deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+            width: 100%;
+            height: 100%;
+            opacity: 0.7;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .top-char-country-flag-expand {
+            object-fit: cover;
+            overflow: hidden;
+        }
+
+        .top-country-flag-size {
+            height: 35px;
+            width: 35px;
+        }
+
+        @media (min-width: 576px) {
+            .top-country-flag-size {
+                height: 54px;
+                width: 54px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .top-country-flag-size {
+                height: 54px;
+                width: 54px;
+            }
+        }
+
+        .max-width-fit {
+            max-width: fit-content;
+            max-width: -moz-fit-content;
+            /* Firefox/Gecko */
+            ;
+        }
+
+        .logo-topcharts-footer-size {
+            height: 35px;
+            width: 92px;
+        }
+
+        .footer-navigator-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-navigator-links-titles-text {
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 16px;
+            color: rgba(0, 0, 0, .5);
+        }
+
+        @media (min-width: 576px) {
+            .footer-navigator-links-titles-text {
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .footer-navigator-links-titles-text {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+
+        .adjust-center {
+            justify-content: center;
+        }
+
+        .adjust-max-width {
+            max-width: fit-content;
+            max-width: -moz-fit-content;
+        }
+
+        @media (min-width: 1200px) {
+            .adjust-max-width {
+                max-width: inherit;
+            }
+        }
+
+        /*Modal Navbar*/
+        .modal-body .list-group {
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .modal-body .list-group a {
+            letter-spacing: 0.05em;
+            border: none;
+            transition: all 0.25s ease;
+            background-color: transparent;
+            color: white;
+            font-family: Roboto;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        .modal-body .list-group a:hover:before {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+
+        .modal-backdrop.in {
+            opacity: 1;
+        }
+
+        .hamburger-links {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid;
+        }
+
+        .modal .modal-content {
+            /* background-color: transparent;*/
+            box-shadow: none;
+            border: none;
+        }
+
+        .hamburger-topsongs-inf-menu {
+            height: 55px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-icon:focus {
+            background: linear-gradient(487.66deg, #f9f4f4, #fdd7d7 100%);
+            border-radius: 25px 25px 0 0 !important;
+            box-shadow: 0 0;
+        }
+
+        .no-outline:focus {
+            outline: 0;
+        }
+
+        .info-card-song-stats {
+            color: grey;
+            font-family: Roboto;
+            font-size: 10px;
+            line-height: 11px;
+        }
+
+        .info-card-song-numbers {
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 18px;
+            text-align: center;
+            color: grey;
+        }
+
+        .info-card-song-release-date {
+            color: grey;
+            font-family: Roboto;
+            font-size: 10px;
+            line-height: 11px;
+        }
+
+        @media (min-width: 576px) {
+            .info-card-song-release-date {
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .info-card-song-release-date {
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .info-card-song-release-date {
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .info-card-song-stats {
+                font-size: 14px;
+                line-height: 16px;
+            }
+
+            .info-card-song-numbers {
+                font-size: 19px;
+                line-height: 23px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .info-card-song-stats {
+                font-size: 18px;
+                line-height: 21px;
+            }
+
+            .info-card-song-numbers {
+                font-size: 22px;
+                line-height: 25px;
+            }
+
+            .info-card-song-stats-mini {
+                font-size: 15px !important;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .info-card-song-stats {
+                font-size: 19px;
+                line-height: 24px;
+            }
+
+            .info-card-song-stats-mini {
+                font-size: 15px !important;
+            }
+
+            .info-card-song-numbers {
+                font-size: 25px;
+                font-weight: bold;
+                line-height: 29px;
+            }
+        }
+
+        .popular-artists {
+            background: -webkit-linear-gradient(130deg, rgba(178, 70, 70, 1) 0, rgba(252, 114, 114, .72) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: Roboto;
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 24px;
+            text-shadow: 1px 2px 0 rgba(0, 0, 0, .1);
+        }
+
+        .itunes-radio-top-100-artists {
+            font-family: Roboto;
+            font-size: 25px;
+            color: white;
+            font-weight: 900;
+            line-height: 34px;
+            text-align: center;
+            text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .popular-artists-name-style {
+            color: grey;
+            font-family: Roboto;
+            font-size: 16px;
+            font-weight: 900;
+            line-height: 19px;
+            text-align: center;
+            text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.15);
+            min-width: 92px;
+        }
+
+        .popular-artists-photo {
+            height: 28vw;
+            background-repeat: no-repeat;
+            ;
+            background-size: cover;
+            border-radius: 6px;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .popular-artists-photo {
+                height: 22vw;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .popular-artists-photo {
+                height: 180px;
+            }
+
+            .popular-artists-name-style {
+                font-size: 24px;
+                font-weight: 900;
+                line-height: 28px;
+                text-align: center;
+                text-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        .overlay-popular-artists-photo {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(313.06deg, rgba(172, 38, 38, 0.5) 0%, rgba(255, 255, 255, 0) 37.87%, rgba(255, 255, 255, 0.25) 71.36%, rgba(255, 255, 255, 0.5) 100%);
+            opacity: 0.7;
+            border-radius: 6px;
+            position: absolute;
+        }
+
+        .all-artists {
+            color: #6C6C6C;
+            font-family: Roboto;
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 24px;
+        }
+
+        .all-artists-letters-icons {
+            background: white;
+            width: 30px;
+            padding: 3px;
+            border-radius: 50%;
+            box-shadow: 0 1px 1pt 1pt #F0A7A0;
+            color: #F2A49D;
+        }
+
+        @media (min-width: 1200px) {
+            .all-artists-letters-icons {
+                width: 47px;
+                padding: 11px;
+            }
+
+            .all-artists {
+                font-size: 27px;
+                line-height: 32px;
+            }
+        }
+
+        .top-search-form-labels {
+            color: white;
+            font-family: Roboto;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 19px;
+        }
+
+        @media (min-width: 576px) {
+            .top-search-form-labels {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .top-search-form-labels {
+                color: white;
+                font-family: Roboto;
+                font-size: 24px;
+                font-weight: bold;
+                line-height: 19px;
+                text-align: right;
+            }
+        }
+
+        .top-search-form-placeholders {
+            color: #9F9F9F;
+            font-family: Roboto;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: end;
+        }
+
+        @media (min-width: 1200px) {
+            .top-search-form-placeholders {
+                color: #9F9F9F;
+                font-family: Roboto;
+                font-size: 18px;
+                line-height: 18px;
+                text-align: end;
+            }
+        }
+
+        select {
+            text-align: end;
+            text-align-last: end;
+            /* webkit*/
+        }
+
+        option {
+            text-align: left;
+            /* reset to left*/
+        }
+
+        .form-border-radius {
+            border-radius: 20px;
+        }
+
+        .border-form-methodology {
+            content: "";
+            background: #E8E8E8;
+            height: 2px;
+            width: inherit;
+            position: absolute;
+        }
+
+        .methodology {
+            color: white;
+            font-family: Roboto;
+            font-size: 11px;
+            line-height: 13px;
+        }
+
+        .methodology-icon {
+            height: 24px;
+            width: 24px
+        }
+
+        @media (min-width: 576px) {
+            .methodology {
+                font-size: 13px;
+                line-height: 15px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .methodology {
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .methodology {
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+
+        .bottom-top-chart-info {
+            font-family: Roboto;
+            font-size: 12px;
+            line-height: 20px;
+            color: #9C9C9C;
+        }
+
+        @media (min-width: 1200px) {
+            .bottom-top-chart-info {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+
+        .top-artists-01 {
+            color: #ffffff;
+            font-family: Righteous;
+            font-size: 90px;
+            line-height: 112px;
+            text-align: right;
+            text-shadow: 6px 6px rgba(0, 0, 0, 0.33);
+        }
+
+        @media (min-width: 1200px) {
+            .top-artists-01 {
+                font-size: 260px;
+                line-height: 183px;
+                padding-right: 115px;
+            }
+        }
+
+        .view-text-style {
+            color: #ffffff;
+            font-family: Roboto;
+            font-size: 12px;
+            line-height: 14px;
+            border-radius: 20px;
+            border: 1px solid white;
+            padding: 2px 9px 2px 9px;
+            margin-bottom: -21px;
+        }
+
+        @media (min-width: 1200px) {
+            .view-text-style {
+                font-size: 18px;
+                line-height: 21px;
+                border-radius: 11px;
+                padding-right: 21px !important;
+                padding-left: 21px !important;
+            }
+        }
+
+        .top-artists-photo-size {
+            height: 126px;
+            width: 126px;
+        }
+
+        @media (min-width: 768px) {
+            .top-artists-photo-size {
+                height: 215px;
+                width: 212px;
+                box-shadow: 2px 3px 1px 0 rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .top-artists-photo-size {
+                height: 309px;
+                width: 304px;
+            }
+        }
+
+        .top-artists-under-photo {
+            color: #6C6C6C;
+            font-family: Roboto;
+            font-size: 25px;
+            font-weight: 900;
+            line-height: 29px;
+            text-align: center;
+            text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (min-width: 1200px) {
+            .top-artists-under-photo {
+                font-size: 50px;
+                font-weight: 900;
+                line-height: 58px;
+            }
+        }
+
+        .info-detail-artist {
+            color: #939393;
+            font-family: Roboto;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 19px;
+        }
+
+        .info-detail-artist-icons {
+            color: #f16b6b;
+        }
+
+        @media (min-width: 768px) {
+            .info-detail-artist {
+                font-size: 24px;
+                line-height: 28px;
+                color: white;
+            }
+
+            .info-detail-artist-icons {
+                color: white;
+            }
+
+            .artist-detail-col-size {
+                height: 140px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .info-detail-artist {
+                font-size: 24px;
+                line-height: 28px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .info-detail-artist {
+                color: white;
+                font-size: 30px;
+                line-height: unset;
+            }
+
+            .info-detail-artist-icons {
+                color: white;
+            }
+        }
+
+        .artist-detail-grad-img {
+            position: absolute;
+            top: 49%;
+            left: 36%;
+        }
+
+        .wikipedia-style {
+            color: #D0D0D0;
+            font-family: Roboto;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .artist-detail-description {
+            color: #939393;
+            font-family: Roboto;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .i-tunes-rank {
+            color: #939393;
+            font-family: Roboto;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 24px;
+        }
+
+        @media (min-width: 1200px) {
+            .wikipedia-style {
+                font-size: 20px;
+                line-height: 24px;
+            }
+
+            .artist-detail-description {
+                font-size: 20px;
+                line-height: 28px;
+            }
+
+            .i-tunes-rank {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+
+        .artist-detail-description-box {
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, .09);
+        }
+
+        .artist-up-ranking {
+            background: white;
+            width: 30px;
+            padding: 8px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 3pt 1pt #17a2b8;
+            color: #3C8586
+        }
+
+        .artist-detail-titles {
+            background: -webkit-linear-gradient(130deg, rgba(178, 70, 70, 1) 0, rgba(252, 114, 114, .72) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            font-family: Roboto;
+            font-size: 20px;
+            line-height: 24px;
+            text-shadow: 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 576px) {
+            .artist-detail-titles {
+                font-size: 27px;
+                line-height: 32px;
+            }
+        }
+
+        .airplay-titles {
+            background: -webkit-linear-gradient(130deg, rgba(178, 70, 70, 1) 0, rgba(252, 114, 114, .72) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: Roboto;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 35px;
+            text-align: center;
+            text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.15);
+        }
+
+        .airplay-smaller-test {
+            font-family: Roboto;
+            color: #6C6C6C;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: center;
+            text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (min-width: 1200px) {
+            .airplay-titles {
+                font-size: 60px;
+                line-height: 71px;
+            }
+
+            .airplay-smaller-test {
+                font-size: 30px;
+                line-height: 35px;
+            }
+        }
+
+        .artist-detail-top-radio-title {
+            color: #6C6C6C;
+            font-family: Roboto;
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 24px;
+            text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.15);
+        }
+
+        .artist-detail-info-radio-song {
+            color: #9B9B9B;
+            font-family: Roboto;
+            font-size: 12px;
+            line-height: 14px;
+            padding-left: 75px;
+        }
+
+        .artist-detail-info-radio-plays {
+            color: #9B9B9B;
+            font-family: Roboto;
+            font-size: 12px;
+            line-height: 14px;
+            padding-right: 88px;
+        }
+
+        @media (min-width: 1200px) {
+            .artist-detail-top-radio-title {
+                font-size: 27px;
+                line-height: 32px;
+            }
+
+            .artist-detail-info-radio-song {
+                font-size: 15px;
+                line-height: 18px;
+                padding-left: 100px;
+            }
+
+            .artist-detail-info-radio-plays {
+                font-size: 15px;
+                line-height: 18px;
+                padding-right: 15px;
+                padding-left: 57px;
+            }
+        }
+
+        .info-detail-artist-top-played {
+            height: 42px;
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, .09);
+            border-radius: 5px;
+            background-color: white;
+            margin-bottom: 5px;
+        }
+
+        @media (min-width: 576px) {
+            .info-detail-artist-top-played {
+                height: 55px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .info-detail-artist-top-played {
+                height: 56px;
+                margin-bottom: 8px;
+            }
+        }
+
+        .number-of-plays {
+            color: #9b9b9b;
+            font-family: Roboto;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: center;
+            border-right: 2px solid #9b9b9b61;
+            border-left: 2px solid #9b9b9b61;
+            min-width: 75px;
+        }
+
+        @media (min-width: 1200px) {
+            .number-of-plays {
+                font-size: 17px;
+                line-height: 20px;
+                border-right: 2px solid #9b9b9b61;
+                border-left: 2px solid #9b9b9b61;
+            }
+        }
+
+        .number-of-plays-dropdown {
+            color: #9b9b9b;
+            font-family: Roboto;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            .number-of-plays-dropdown {
+                font-size: 17px;
+                line-height: 20px;
+            }
+        }
+
+        .itunes-logo {
+            height: 22px;
+        }
+
+        .apple-music-logo {
+            height: 30px;
+        }
+
+        @media (min-width: 1200px) {
+            .itunes-logo {
+                height: 29px;
+                width: 80px;
+            }
+
+            .apple-music-logo {
+                height: 35px;
+            }
+        }
+
+        .num-plays-sides-border {
+            border-left: 2px solid #9b9b9b61;
+            border-right: 2px solid #9b9b9b61;
+            padding-left: 1px;
+            padding-right: 1px;
+        }
+
+        @media (min-width: 1200px) {
+            .num-plays-sides-border {
+                border: 0;
+                padding: 0;
+            }
+        }
+
+        .circular-flag {
+            height: 28px;
+            width: 28px;
+        }
+
+        .artist-detail-country-text {
+            color: #6C6C6C;
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+
+        @media (min-width: 576px) {
+            .artist-detail-country-text {
+                font-size: 18px;
+                line-height: 21px;
+            }
+
+            .circular-flag {
+                height: 40px;
+                width: 40px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .artist-detail-country-text {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .artist-detail-country-text {
+                font-size: 18px;
+                line-height: 21px;
+            }
+
+            .circular-flag {
+                height: 40px;
+                width: 40px;
+            }
+        }
+
+        .radio-names-min-width {
+            min-width: 64px;
+        }
+
+        .top-20-itunes-song {
+            min-width: 127px;
+        }
+
+        .numbers-min-width {
+            min-width: 55px;
+        }
+
+        .country-column-min-width {
+            min-width: 80px;
+        }
+
+        .song-detail-image-song {
+            color: #FFFFFF;
+            font-family: Roboto;
+            font-size: 25px;
+            font-weight: 900;
+            line-height: 29px;
+            text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.15);
+        }
+
+        .song-detail-image-singer {
+            color: #ffffff;
+            font-family: Roboto;
+            font-size: 20px;
+            line-height: 24px;
+            text-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .song-details {
+            color: #939393;
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16px;
+            text-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .song-details-bold {
+            color: #939393;
+            font-family: Roboto;
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: bold;
+            text-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .country-fm-dropdown {
+            color: #6C6C6C;
+            font-family: Roboto;
+            font-size: 15px;
+            line-height: 18px;
+        }
+
+        @media (min-width: 576px) {
+            .country-fm-dropdown {
+                font-size: 17px;
+                line-height: 20px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .country-fm-dropdown {
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+
+        .country-drop-border {
+            border-bottom: 1px solid #8a8a8a80;
+        }
+
+        .margin-border-country-drop {
+            margin-left: 45px;
+            border-bottom: 1px solid #8a8a8a80
+        }
+
+        .song-detail-country-card {
+            height: 42px;
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, .09);
+            background-color: #fff;
+        }
+
+        .song-detail-appears-album {
+            height: 135px;
+            width: 135px;
+        }
+
+        .appears-album-border {
+            border-radius: 2px;
+            border: 6px solid white;
+        }
+
+        .genre-image-size {
+            height: 33vw;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        @media (min-width: 768px) {
+            .genre-image-size {
+                height: 25vw;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .genre-image-size {
+                height: 20vw;
+                flex: 0 0 20%;
+                max-width: 20%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .genre-image-size {
+                max-height: 234px;
+                max-width: 232px;
+            }
+        }
+
+        .genre-name-style {
+            color: white;
+            font-family: Lobster;
+            font-size: 14px;
+            line-height: 18px;
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            .genre-name-style {
+                font-size: 20px;
+                line-height: 25px;
+            }
+        }
+
+        .grad-logos {
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .search-sug-placeholder {
+            color: #9F9F9F;
+            font-family: Roboto;
+            font-size: 16px;
+            line-height: 18px;
+        }
+
+        .box-shadow-0:focus {
+            box-shadow: 0 0;
+        }
+
+        .grad-logos-text-small {
+            color: white;
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 900;
+            line-height: 34px;
+            text-align: center;
+            text-shadow: 2px 3px rgba(0, 0, 0, 0.25);
+        }
+
+        .grad-logos-text-big {
+            color: white;
+            font-family: Roboto;
+            font-size: 44px;
+            font-weight: 900;
+            line-height: 34px;
+            text-align: center;
+            text-shadow: 2px 3px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (min-width: 576px) {
+            .grad-logos-text-small {
+                font-size: 27px;
+            }
+
+            .grad-logos-text-big {
+                font-size: 83px;
+                line-height: 87px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .grad-logos-text-small {
+                font-size: 30px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .grad-logos-text-small {
+                font-size: 30px;
+                line-height: 40px;
+            }
+
+            .grad-logos-text-big {
+                font-size: 104px;
+                line-height: 98px;
+                text-align: center;
+            }
+        }
+
+        .artist-names-text-style {
+            color: #6C6C6C;
+            font-family: Roboto;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        @media (min-width: 1200px) {
+            .artist-names-text-style {
+                font-size: 22px;
+                line-height: 30px;
+            }
+        }
+
+        .radio-top-100-artist-box {
+            height: 52px;
+            border-radius: 8px;
+        }
+
+        .lateral-grad-top-100-box {
+            height: 146px;
+            border-radius: 5px;
+        }
+
+        .lateral-grad-top-100-up-text {
+            color: #ffffff !important;
+            font-family: Roboto;
+            font-size: 26px;
+            font-weight: 900;
+            line-height: 41px;
+            text-shadow: 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .lateral-grad-top-100-down-text {
+            color: #ffffff !important;
+            font-family: Roboto;
+            font-size: 29pt;
+            font-weight: 900;
+            line-height: 41px;
+            text-shadow: 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (min-width: 1200px) {
+            .lateral-grad-top-100-up-text {
+                font-size: 40pt;
+                font-weight: 900;
+                line-height: 41px;
+            }
+
+            .lateral-grad-top-100-down-text {
+                font-size: 24pt;
+                line-height: 41px;
+            }
+
+            .radio-top-100-artist-box {
+                height: 100px;
+            }
+        }
+
+        .top-search-grad-box {
+            height: 225px;
+        }
+
+        @media (min-width: 1200px) {
+            .top-search-grad-box {
+                height: 428px;
+            }
+        }
+
+        .image-box-grad {
+            background-image: url('https://cdn.top-charts.com/static/images/intro_img.jpg');
+        }
+
+        @media (min-width: 768px) {
+            .image-box-grad {
+                background-image: url('https://cdn.top-charts.com/static/images/intro_img_768.png');
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .image-box-grad {
+                background-image: url('https://cdn.top-charts.com/static/images/web_intro_large.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .top-artists-grad-box {
+            height: 123px;
+        }
+
+        @media (min-width: 576px) {
+            .top-artists-grad-box {
+                height: 240px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .top-artists-grad-box {
+                height: 258px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .top-artists-grad-box {
+                height: 310px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .top-artists-grad-box {
+                height: 225px;
+            }
+        }
+
+        .top-artists-names-grad-box {
+            height: 132px;
+        }
+
+        @media (min-width: 1200px) {
+            .top-artists-names-grad-box {
+                height: 258px
+            }
+        }
+
+        .top-100-artist-grad-box {
+            height: 131px;
+        }
+
+        @media (min-width: 1200px) {
+            .top-100-artist-grad-box {
+                height: 428px;
+            }
+        }
+
+        .home-grad-box {
+            height: 123px;
+        }
+
+        @media (min-width: 576px) {
+            .home-grad-box {
+                height: 240px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .home-grad-box {
+                height: 358px;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .mt-sm-n45 {
+                margin-top: -2.5rem !important;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .mt-lg-n45 {
+                margin-top: -2.5rem;
+            }
+        }
+
+        .show-at-576 {
+            display: none;
+        }
+
+        .show-at-768 {
+            display: none;
+        }
+
+        .show-at-992 {
+            display: none;
+        }
+
+        .show-at-1200 {
+            display: none;
+        }
+
+        @media (min-width: 576px) {
+            .show-at-576 {
+                display: flex;
+            }
+
+            .hide-at-576 {
+                display: none;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .show-at-768 {
+                display: flex;
+            }
+
+            .hide-at-768 {
+                display: none;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .show-at-992 {
+                display: flex;
+            }
+
+            .hide-at-992 {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .show-at-1200 {
+                display: flex;
+            }
+
+            .hide-at-1200 {
+                display: none;
+            }
+        }
+
+        /*Finish section*/
+        .top-search-title-style {
+            color: white;
+            font-size: 57px;
+            font-weight: 900;
+            line-height: 72px;
+            text-align: center;
+            font-family: Roboto;
+            text-shadow: 6px 6px rgba(0, 0, 0, 0.25);
+        }
+
+        .percentage-up {
+            color: #3C8586;
+            font-family: Roboto;
+            font-size: 25px;
+            line-height: 9px;
+            text-align: center;
+            padding: 30px 4px 30px 4px;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .top-country-flag-size-with-border {
+            height: 64px;
+            width: 65px;
+            border-radius: 30px;
+            border: 2px solid white;
+        }
+
+        .top-songs-last-updated {
+            color: #ffffff;
+            font-family: Roboto;
+            font-size: 11px;
+            line-height: 13px;
+            text-align: right;
+        }
+
+        @media (min-width: 576px) {
+            .top-songs-last-updated {
+                font-size: 13px;
+                line-height: 15px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .top-songs-last-updated {
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .top-songs-last-updated {
+                font-size: 16px;
+                line-height: 32px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .methodology-max-width {
+                max-width: 858px;
+            }
+        }
+
+        .newsletter-style {
+            color: #6C6C6C;
+            font-family: Roboto;
+            font-size: 21px;
+            font-weight: bold;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        .newsletter-signup-style {
+            color: white;
+            font-family: Roboto;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        .newsletter-button-style {
+            border-color: transparent !important;
+            background: linear-gradient(164.7deg, #FFE7E4 0%, #D41200 100%);
+            border-radius: 15px;
+        }
+
+        .song-dropdown-options {
+            color: #8E8E8E !important;
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 15px;
+            outline: transparent;
+        }
+
+        .song-dropdown-options:focus {
+            color: #F06B6B !important;
+        }
+
+        .song-dropdown-options-active {
+            color: #F06B6B !important;
+        }
+
+        @media (min-width: 576px) {
+            .song-dropdown-options {
+                font-size: 15px;
+                line-height: 18px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .song-dropdown-options {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+
+        .share-buttons {
+            background-color: white !important;
+            box-sizing: border-box;
+            border-radius: 9px;
+            border: 1px solid #DDDDDD !important;
+            color: #8E8E8E !important;
+            font-family: Roboto;
+            font-size: 15px;
+            line-height: 14px;
+            padding: 4px 5px 4px 5px;
+            ;
+        }
+
+        .share-buttons-go-to {
+            font-size: 15px;
+            padding: 5px 39px 5px 39px !important;
+            ;
+        }
+
+        @media (min-width: 576px) {
+            .share-buttons {
+                font-size: 15px;
+                border-radius: 17px;
+                padding: 8px 25px 8px 25px;
+                line-height: 18px;
+            }
+
+            .share-buttons-go-to {
+                padding: 6px 45px 6px 45px !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .share-buttons {
+                font-size: 18px;
+                padding: 10px 38px 10px 38px;
+                line-height: 21px;
+            }
+
+            .share-buttons-mini-column {
+                padding: 6px !important;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .share-buttons {
+                font-size: 18px;
+                padding: 10px 38px 10px 38px;
+                line-height: 21px;
+            }
+
+            .share-buttons-mini-column {
+                padding: 10px 20px 10px 20px !important;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .share-buttons {
+                font-size: 22px;
+                border-radius: 33px;
+                padding: 19px 80px 19px 80px;
+                line-height: 25px;
+            }
+
+            .share-buttons-mini {
+                padding: 19px 40px 19px 40px !important;
+            }
+
+            .share-buttons-mini-column {
+                padding: 10px 20px 10px 20px !important;
+            }
+        }
+
+        .song-dropdown-social-icons {
+            color: #CDCDCD;
+        }
+
+        .top-search-show-dropdown {
+            display: none;
+        }
+
+        @media (min-width: 1200px) {
+            .top-search-show-dropdown {
+                display: flex;
+            }
+        }
+
+        .drop-icon-size {
+            font-size: 20px;
+        }
+
+        @media (min-width: 576px) {
+            .drop-icon-size {
+                font-size: 31px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .drop-icon-size {
+                font-size: 40px;
+            }
+        }
+
+        .container-img-overlay {
+            height: 217px;
+        }
+
+        @media (min-width: 1200px) {
+            .container-img-overlay {
+                height: 620px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .top-100-artist-grad-title {
+                font-family: Roboto;
+                font-size: 75px;
+                font-weight: 900;
+                line-height: 50px;
+                text-align: center;
+                text-shadow: 6px 6px rgba(0, 0, 0, 0.25);
+            }
+        }
+
+        .top-100-artists-img {
+            top: 57%;
+        }
+
+        @media (min-width: 1200px) {
+            .top-100-artists-img {
+                top: 67%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .pl-xl-240 {
+                padding-left: 240px;
+            }
+        }
+
+        .artist-detail-song-numbers {
+            min-width: 32px;
+            padding: 0;
+        }
+
+        @media (min-width: 1200px) {
+            .artist-detail-song-numbers {
+                min-width: 52px;
+            }
+        }
+
+        .artist-detail-grad-title {
+            color: white;
+            font-family: Roboto;
+            font-size: 35px;
+            font-weight: 900;
+            line-height: 41px;
+            text-align: center;
+            text-shadow: 6px 6px 0 0 rgba(0, 0, 0, 0.25);
+        }
+
+        @media (min-width: 1200px) {
+            .artist-detail-grad-title {
+                font-size: 75px;
+                font-weight: 900;
+                line-height: unset;
+            }
+        }
+
+        .artist-detail-center-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @media (min-width: 768px) {
+            .artist-detail-center-image {
+                top: 58%;
+                left: 50%;
+            }
+        }
+
+        .artist-detail-grad-subtitle {
+            color: white;
+            font-family: Roboto;
+            font-size: 50px;
+            line-height: 98px;
+            text-align: center;
+            text-shadow: 6px 6px 0 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .fans-card-number {
+            color: #939393;
+            font-family: Roboto;
+            font-size: 16px;
+            line-height: 24px;
+            text-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        @media (min-width: 1200px) {
+            .fans-card-number {
+                font-size: 20px;
+                line-height: 24px;
+                text-align: center;
+            }
+        }
+
+        .number-of-plays-without-bord {
+            color: #9b9b9b;
+            font-family: Roboto;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            .number-of-plays-without-bord {
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .number-of-plays-without-bord {
+                font-size: 17px;
+                line-height: 20px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .pr-xl-72 {
+                padding-right: 72px !important;
+            }
+
+            .pr-xl-77 {
+                padding-right: 77px !important;
+            }
+        }
+
+        .genre-grad-box {
+            height: 131px;
+        }
+
+        @media (min-width: 1200px) {
+            .genre-grad-box {
+                height: 225px;
+            }
+        }
+
+        .genre-top-grad-box {
+            height: 225px;
+        }
+
+        @media (min-width: 1200px) {
+            .genre-top-grad-box {
+                height: 453px;
+            }
+        }
+
+        .play-icon-img {
+            height: 30px;
+            width: 30px;
+        }
+
+        @media (min-width: 576px) {
+            .play-icon-img {
+                height: 41px;
+                width: 41px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .play-icon-img {}
+        }
+
+        .search-results-grad-box {
+            height: 123px;
+        }
+
+        @media (min-width: 576px) {
+            .search-results-grad-box {
+                height: 240px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .search-results-grad-box {
+                height: 310px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .search-results-grad-box {
+                height: 225px;
+            }
+        }
+
+        .search-song-title {
+            color: #6C6C6C;
+            font-family: Roboto;
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 24px;
+        }
+
+        .search-singer-title {
+            color: #434343b5;
+            font-family: Roboto;
+            font-size: 18px;
+            line-height: 21px;
+            text-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .search-artists-photo {
+            height: 28vw;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 6px;
+            width: 30vw;
+        }
+
+        .search-header-text-small {
+            color: white;
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 900;
+            line-height: 27px;
+            text-align: center;
+            text-shadow: 2px 3px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (min-width: 576px) {
+            .search-header-text-small {
+                font-size: 27px;
+            }
+
+            .search-artists-photo {
+                height: 13vw;
+                width: 13vw;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .search-artists-photo {
+                width: 13vw;
+                height: 13vw;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .search-song-title {
+                font-size: 25px;
+                line-height: 29px;
+            }
+
+            .search-singer-title {
+                font-size: 22px;
+                line-height: 25px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .search-artists-photo {
+                height: 120px;
+                width: 120px;
+            }
+
+            .search-header-text-small {
+                font-size: 37px;
+                line-height: 37px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .search-song-title {
+                font-family: Roboto;
+                font-size: 28px;
+                line-height: 33px;
+            }
+
+            .search-singer-title {
+                font-size: 24px;
+                line-height: 28px;
+            }
+        }
+
+        .not-found-grad-box {
+            height: 123px;
+        }
+
+        @media (min-width: 1200px) {
+            .not-found-grad-box {
+                height: 225px;
+            }
+        }
+
+        .plataforms-grad-logo {
+            background-image: url('https://cdn.top-charts.com/static/images/top100_radio_mobile.svg');
+        }
+
+        .plataforms-style-text {
+            color: #ffffff !important;
+            font-family: Roboto;
+            font-size: 26px;
+            font-weight: 900;
+            line-height: 41px;
+            text-shadow: 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (min-width: 1200px) {
+            .plataforms-style-text {
+                font-size: 32px;
+                line-height: 41px;
+            }
+        }
+
+        .not-found-message {
+            color: #6C6C6C;
+            font-family: Roboto;
+            font-size: 18px;
+            line-height: 26px;
+            text-align: center;
+            text-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        @media (min-width: 1200px) {
+            .mb-xl-n60 {
+                margin-bottom: -60px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .position-xl-static {
+                position: static !important;
+            }
+        }
+
+        .image-404 {
+            height: 277px;
+            background-repeat: repeat;
+            background-image: url('https://cdn.top-charts.com/static/images/img_404_mobile.svg');
+        }
+
+        @media (min-width: 1200px) {
+            .image-404 {
+                background-image: url('https://cdn.top-charts.com/static/images/img_404_desktop.svg');
+                background-repeat: repeat;
+                height: 278px;
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .not-found-grad-box-divider {
+                max-width: 372px !important;
+            }
+        }
+
+        .artist-names-list-h {
+            height: auto;
+        }
+
+        @media (min-width: 1200px) {
+            .artist-names-list-h {}
+        }
+
+        .dropdown-info-size {
+            height: 72px;
+        }
+
+        @media (min-width: 576px) {
+            .dropdown-info-size {
+                height: 82px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .dropdown-info-size {
+                height: 93px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .dropdown-info-size {
+                height: 109px;
+            }
+        }
+
+        .song-card-play-button {
+            height: 32px;
+            width: auto;
+        }
+
+        @media (min-width: 992px) {
+            .song-card-play-button {
+                height: 41px;
+                width: auto;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .song-card-play-button {
+                height: 47px;
+                width: auto;
+            }
+        }
+
+        .share-button-img {
+            height: 35px;
+            width: auto;
+        }
+
+        @media (min-width: 1200px) {
+            .share-button-img {
+                height: 35px;
+                width: auto;
+            }
+        }
+
+        .ios-share {
+            content: url("https://cdn.top-charts.com/static/images/Share_IOS.svg");
+        }
+
+        .android-share {
+            content: url("https://cdn.top-charts.com/static/images/Share_Android.svg");
+        }
+
+        @media (min-width: 1200px) {
+            .pl-xl-60 {
+                padding-left: 60px;
+            }
+
+            .pr-xl-60 {
+                padding-right: 60px !important;
+            }
+        }
+
+        .dropdown-icon-size {
+            font-size: 14px;
+        }
+
+        @media (min-width: 576px) {
+            .dropdown-icon-size {
+                font-size: 18px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .dropdown-icon-size {
+                font-size: 35px;
+            }
+        }
+
+        .change-country-dropdown {
+            border-radius: 22px;
+            border: 1px solid #E5E5E5;
+            background-color: #FFFFFF !important;
+            box-sizing: border-box;
+        }
+
+        .filter-option-inner-inner {
+            color: #9F9F9F;
+            font-family: Roboto;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: right;
+        }
+
+        .bootstrap-select.btn-group .dropdown-toggle .caret {
+            width: 10px;
+            height: 10px;
+            border: none;
+            background-color: green;
+        }
+
+        .bootstrap-select>.dropdown-toggle:after {
+            color: #D8D8D8;
+        }
+
+        /*.dropdown-menu { top: -38px !important; border-radius: 0px 0px 10px 10px; border: 0 !important; padding: 0; background-color: transparent; }*/
+        /*@media (min-width: 1200px) { .dropdown-menu { border-radius: 0px 0px 30px 30px; } }*/
+        /*.dropdown-menu li { border-width: 0 1px 1px 1px; border-style: solid; border-color: #e4e4e4; background-color: white; }*/
+        /*@media (min-width: 1200px) { .dropdown-menu li { border-width: 0 2px 2px 2px; } }*/
+        .bs-searchbox {
+            padding: 0 !important;
+        }
+
+        .bs-searchbox .form-control {
+            border-radius: 15px 15px 0 0;
+        }
+
+        @media (min-width: 1200px) {
+            .bs-searchbox .form-control {
+                border-radius: 18px 18px 0 0;
+            }
+        }
+
+        /*.dropdown-item .text{ color: black; font-family: Roboto; font-size: 15px; line-height: 18px; text-align: right; }*/
+        .dropdown-item.active {
+            background-color: #EE938B;
+        }
+
+        li a .selected {
+            background-color: red;
+        }
+
+        .dropdown.bootstrap-select:focus {
+            outline: 0;
+        }
+
+        select:focus {
+            outline: 0;
+        }
+
+        .bootstrap-select .dropdown-toggle:focus {
+            outline: 0 !important;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 0 0;
+        }
+
+        .btn.focus,
+        .btn:focus {
+            outline: 0 !important;
+            box-shadow: 0 0;
+        }
+
+        .dropdown-menu>li>a:hover {
+            background-color: black;
+        }
+
+        .bs-searchbox .form-control:focus {
+            border-color: #EE938B;
+        }
+
+        .dropdown-item .text {
+            color: #333333;
+            /*#383d41e3;*/
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: normal;
+            line-height: 15px;
+        }
+
+        .bs-searchbox input {
+            color: #333333;
+            /*#383d41e3;*/
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: normal;
+            line-height: 15px;
+        }
+
+        .dropdown-menu .no-results {
+            color: #333333;
+            /*#383d41e3;*/
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: normal;
+            line-height: 15px;
+        }
+
+        .card-plataform {
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.12);
+            border-radius: 10px;
+        }
+
+        .container-max-width {
+            max-width: none;
+        }
+
+        .container-max-width-1200 {
+            max-width: none;
+        }
+
+        @media (min-width: 1200px) {
+            .container-max-width {
+                max-width: 1160px;
+            }
+
+            .container-max-width-1200 {
+                max-width: 1200px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .top-songs-side-menu {
+                color: #6C6C6C;
+                font-family: Roboto;
+                font-size: 23px;
+                font-weight: bold;
+                line-height: 27px;
+            }
+        }
+
+        .fit-content-till-576 {
+            max-width: fit-content;
+        }
+
+        @media (min-width: 576px) {
+            .fit-content-till-576 {
+                max-width: 100%;
+            }
+        }
+
+        .plataform-icons-text {
+            color: #6c6c6c;
+            font-family: Roboto;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 19px;
+        }
+
+        @media (min-height: 1200px) {
+            .ml-xl-36 {
+                margin-left: 36px;
+            }
+        }
+
+        .caret-icon-size {
+            font-size: 12px;
+        }
+
+        @media (min-width: 576px) {
+            .caret-icon-size {
+                font-size: 20px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-collapse {
+                display: none !important;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .navbar-expand-lg .navbar-collapse {
+                display: -ms-flexbox;
+                display: flex !important;
+                ;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .m-col-song-detail {
+                margin-left: 70px;
+            }
+        }
+
+        .image-center-on-container {
+            top: 61%;
+            left: 36%;
+        }
+
+        @media (min-width: 768px) {
+            .image-center-on-container {
+                top: 58%;
+                left: 33%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .image-center-on-container {
+                top: 63%;
+                left: 35%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .song-detail-alb-pos {
+                max-width: fit-content;
+            }
+        }
+
+        .about-us-we-are {
+            background: -webkit-linear-gradient(130deg, rgba(178, 70, 70, 1) 0%, rgba(252, 114, 114, 0.72) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: Roboto;
+            font-size: 75px;
+            font-weight: 900;
+            line-height: 98px;
+            text-align: center;
+        }
+
+        .about-us-text-style {
+            color: #8E8E8E;
+            font-family: Roboto;
+            font-size: 18px;
+            line-height: 26px;
+        }
+
+        .about-us-text-special {
+            color: #8E8E8E;
+            font-family: Roboto;
+            font-size: 18px;
+            font-style: italic;
+            font-weight: bold;
+            line-height: 26px;
+            text-align: center;
+        }
+
+        @media (min-width: 1200px) {
+            .about-us-we-are {
+                font-size: 75px;
+                font-weight: 900;
+            }
+
+            .about-us-text-style {
+                font-size: 24px;
+                line-height: 34px;
+            }
+
+            .about-us-text-special {
+                color: #8E8E8E;
+                font-family: Roboto;
+                font-size: 24px;
+                font-style: italic;
+                font-weight: bold;
+                line-height: 34px;
+                text-align: center;
+            }
+
+            .about-us-container-size {
+                height: 818px;
+                max-width: 100%
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .footer-labels-box-size {
+                height: 46px;
+            }
+
+            .mb-xl-60 {
+                margin-bottom: 60px;
+            }
+        }
+
+        .map {
+            position: relative;
+            text-align: right;
+            height: 192px;
+            width: 100%;
+        }
+
+        .contacts-company-text {
+            color: #8E8E8E;
+            font-family: Roboto;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 28px;
+        }
+
+        @media (min-width: 576px) {
+            .map {
+                height: 320px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .map {
+                height: 500px;
+            }
+
+            .contacts-company-text {
+                font-size: 28px;
+                line-height: 46px;
+            }
+
+            .contacts-address-text {
+                font-size: 24px;
+                line-height: 46px;
+            }
+        }
+
+        .contacts-address-text {
+            color: #8E8E8E;
+            font-family: Roboto;
+            font-size: 18px;
+            line-height: 28px;
+        }
+
+        .contacts-talk-to-us {
+            color: #898989;
+            font-family: Roboto;
+            font-size: 50px;
+            font-weight: 900;
+            line-height: 98px;
+            text-shadow: 6px 6px 0 rgba(125, 125, 125, 0.12);
+        }
+
+        .contacts-send-us-your-message {
+            color: #8E8E8E;
+            font-family: Roboto;
+            font-size: 16px;
+            line-height: 24px;
+            text-shadow: 6px 6px 0 0 rgba(0, 0, 0, 0.12);
+        }
+
+        @media (min-width: 1200px) {
+            .contacts-send-us-your-message {
+                font-size: 24px;
+                line-height: 34px;
+            }
+        }
+
+        .contacts-your-information {
+            color: #8E8E8E;
+            font-family: Roboto;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 34px;
+        }
+
+        .contacts-input-fields::-webkit-input-placeholder {
+            color: #BEBEBE;
+        }
+
+        /* WebKit, Blink, Edge */
+        .contacts-input-fields:-moz-placeholder {
+            color: #BEBEBE;
+        }
+
+        /* Mozilla Firefox 4 to 18 */
+        .contacts-input-fields::-moz-placeholder {
+            color: #BEBEBE;
+        }
+
+        /* Mozilla Firefox 19+ */
+        .contacts-input-fields:-ms-input-placeholder {
+            color: #BEBEBE;
+        }
+
+        /* Internet Explorer 10-11 */
+        .contacts-input-fields::-ms-input-placeholder {
+            color: #BEBEBE;
+        }
+
+        .contacts-input-fields {
+            font-family: Roboto;
+            border-radius: 14px;
+            height: 53px;
+            border: 0;
+        }
+
+        .contacts-input-fields:focus {
+            color: black;
+        }
+
+        @media (min-width: 1200px) {
+            .contacts-your-information {
+                font-size: 24px;
+                line-height: 34px;
+            }
+
+            .contacts-input-fields {
+                border-radius: 14px;
+                height: 67px;
+                font-size: 20px;
+                line-height: 26px;
+            }
+
+            .contacts-talk-to-us-cont {
+                height: 392px;
+            }
+        }
+
+        .privacy-normal-text {
+            color: #8E8E8E;
+            font-family: Roboto;
+            font-size: 18px;
+            line-height: 26px;
+            text-align: center;
+        }
+
+        .privacy-title-label {
+            color: #8E8E8E;
+            font-family: Roboto;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 28px;
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            .privacy-normal-text {
+                font-size: 18px;
+                line-height: 26px;
+            }
+
+            .privacy-title-label {
+                font-size: 20px;
+                line-height: 26px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .privacy-normal-text {
+                font-size: 18px;
+                line-height: 26px;
+            }
+
+            .privacy-title-label {
+                font-size: 18px;
+                line-height: 26px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .privacy-normal-text {
+                font-size: 18px;
+                line-height: 26px;
+            }
+
+            .privacy-title-label {
+                font-size: 18px;
+                line-height: 26px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .privacy-normal-text {
+                font-size: 24px;
+                line-height: 34px;
+            }
+
+            .privacy-title-label {
+                font-size: 28px;
+                line-height: 34px;
+            }
+        }
+
+        .static-page-header {
+            color: #ffffff;
+            font-family: Roboto;
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 49px;
+            text-align: center;
+            text-shadow: 6px 6px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .static-page-header-small {
+            color: #ffffff;
+            font-family: Roboto;
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 24px;
+            text-align: center;
+            text-shadow: 6px 6px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .static-page-grad-box {
+            height: 131px;
+        }
+
+        @media (min-width: 576px) {
+            .static-page-header {
+                font-size: 75px;
+                line-height: 78px;
+            }
+
+            .static-page-header-small {
+                font-size: 35px;
+                line-height: 58px;
+            }
+
+            .static-page-grad-box {
+                height: 240px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .static-page-header {
+                font-size: 83px;
+                line-height: 98px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .static-page-grad-box {
+                height: 310px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .static-page-header {
+                font-weight: 900;
+                line-height: 78px;
+            }
+
+            .static-page-header-small {
+                font-size: 38px;
+                line-height: 42px;
+            }
+        }
+
+        .contacts-icon-sizes {
+            font-size: 22px;
+            color: #8E8E8E;
+        }
+
+        @media (min-width: 576px) {
+            .contacts-company-details {
+                max-width: fit-content;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .w-md-65 {
+                max-width: 65%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .contacts-text-area-size {
+                height: 190px !important;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .contacts-text-area-size {
+                height: 233px !important;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .hide-small-input {
+                display: none;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .hide-small-input {
+                display: none !important;
+            }
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:hover {
+            color: #FF9B9B;
+            text-decoration: none;
+        }
+
+        @media (max-width: 1199px) {
+            .song-card-hide:nth-child(n+21) {
+                display: none;
+            }
+        }
+
+        .audio-song-width {
+            max-width: 68%;
+        }
+
+        .audio-song-title {
+            color: #6C6C6C;
+            font-family: Roboto;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 19px;
+        }
+
+        .audio-song-artists {
+            color: #8E8E8E;
+            font-family: Roboto;
+            font-size: 15px;
+            line-height: 18px;
+        }
+
+        .audio-song-image {
+            height: 49px;
+            width: 48px;
+            border-radius: 6px;
+            background: linear-gradient(313.06deg, rgba(172, 38, 38, 0.5) 0%, rgba(255, 255, 255, 0) 37.87%, rgba(255, 255, 255, 0.25) 71.36%, rgba(255, 255, 255, 0.5) 100%);
+        }
+
+        .audio-box-size {
+            height: 50px;
+        }
+
+        .audio-time-style {
+            color: #DC6262;
+            font-family: Roboto;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: right;
+        }
+
+        .audio-duration-bar-color {
+            position: absolute;
+            top: 50%;
+            width: 0;
+            z-index: 2;
+            height: 1px;
+        }
+
+        .audio-duration-bar-no-color {
+            position: absolute;
+            top: 50%;
+        }
+
+        .audio-plataforms-icon {
+            height: 30px;
+            width: auto;
+        }
+
+        .audio-player-icons {
+            height: 23px;
+        }
+
+        .audio-display-mobile {
+            position: fixed;
+            bottom: 40px;
+            left: 0;
+        }
+
+        @media (min-width: 576px) {
+            .audio-box-size {
+                height: 62px;
+            }
+
+            .audio-display-mobile {
+                bottom: 53px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .audio-display-mobile {
+                position: static;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .audio-column-bar {
+                flex: 0 0 40%;
+                max-width: 40%;
+            }
+
+            .audio-column-inside-bar {
+                flex: 0 0 77%;
+                max-width: 77%;
+            }
+
+            .audio-column-platforms-audio {
+                max-width: 24%;
+                flex: 0 0 24%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .audio-song-width {
+                max-width: 68%;
+            }
+
+            .audio-song-title {
+                color: #6C6C6C;
+                font-family: Roboto;
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 19px;
+            }
+
+            .audio-song-artists {
+                color: #8E8E8E;
+                font-family: Roboto;
+                font-size: 15px;
+                line-height: 18px;
+            }
+
+            .audio-song-image {
+                height: 49px;
+                width: 48px;
+                border-radius: 6px;
+                background: linear-gradient(313.06deg, rgba(172, 38, 38, 0.5) 0%, rgba(255, 255, 255, 0) 37.87%, rgba(255, 255, 255, 0.25) 71.36%, rgba(255, 255, 255, 0.5) 100%);
+            }
+
+            .audio-time-style {
+                color: #DC6262;
+                font-family: Roboto;
+                font-size: 15px;
+                line-height: 18px;
+                text-align: right;
+            }
+
+            .audio-duration-bar-color {
+                position: absolute;
+                top: 50%;
+                width: 0;
+                z-index: 2;
+                height: 1px;
+            }
+
+            .audio-duration-bar-no-color {
+                position: absolute;
+                top: 50%;
+            }
+
+            .audio-plataforms-icon {
+                height: 30px;
+                width: auto;
+            }
+
+            .audio-column-platforms-audio {
+                max-width: 33%;
+                flex: 0 0 33%;
+            }
+
+            .audio-column-platforms-size {
+                max-width: fit-content;
+            }
+
+            .audio-slider-size {
+                max-width: 81px;
+            }
+        }
+
+        #ex1Slider .slider-selection {
+            background: linear-gradient(133.29deg, #FC7272 0%, #B24646 100%);
+        }
+
+        #ex1Slider .slider-handle {
+            background: linear-gradient(164.7deg, #FFE7E4 0%, #D41200 100%) !important;
+        }
+
+        #ex1Slider {
+            width: 100%;
+        }
+
+        #ex1Slider .slider-track {
+            height: 6px;
+        }
+
+        #ex1Slider .slider-handle {
+            height: 13px;
+            width: 13px;
+        }
+
+        #ex1Slider .min-slider-handle {
+            margin: 0;
+        }
+
+        #ex2Slider {
+            max-width: 100%;
+        }
+
+        @media (min-width: 1200px) {
+            #ex1Slider .slider-selection {
+                background: linear-gradient(133.29deg, #FC7272 0%, #B24646 100%);
+            }
+
+            #ex1Slider .slider-handle {
+                background: linear-gradient(164.7deg, #FFE7E4 0%, #D41200 100%) !important;
+            }
+
+            #ex1Slider .slider-horizontal {
+                width: 100%;
+            }
+
+            #ex2Slider {
+                max-width: 100%;
+            }
+        }
+
+        .modal-items-href {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-items {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-items-rows {
+            border-bottom: 1px solid;
+        }
+
+        .disabled-option {
+            color: #e9ecef4f !important;
+        }
+
+        .modal-dropdown-margin {
+            margin: 0.2rem;
+        }
+
+        .footer-face-icon {
+            padding-left: 10px;
+        }
+
+        @media (min-width: 1200px) {
+            .song-detail-rank-rows {
+                width: 378px;
+                max-width: 378px;
+            }
+        }
+
+        .search-song-card:nth-child(n+11) {
+            display: none;
+        }
+
+        /*Safari facebook comments iframe*/
+        .fb_iframe_widget_fluid_desktop iframe {
+            min-width: 100% !important;
+        }
+
+        .generic-language {
+            color: #ffffff;
+            font-family: Roboto;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 21px;
+            background-color: transparent;
+        }
+
+        .generic-language-button {
+            background-color: transparent;
+            border-color: transparent;
+            color: #6c6c6c;
+        }
+
+        .generic-language-button:hover {
+            background-color: white !important;
+            color: #6c6c6c !important;
+        }
+
+        .show>.generic-language-button {
+            box-shadow: 0 0 !important;
+        }
+
+        .generic-language-dropdown {
+            background-color: white;
+            top: 35px !important;
+            left: -24px !important;
+            min-width: 70px;
+        }
+
+        .show>.generic-language-button {
+            color: #6C6C6C !important;
+            background-color: #FFFFFF !important;
+            border-color: transparent !important;
+        }
+
+        .color-grey {
+            color: #6C6C6C;
+        }
+
+        .top-search-line {
+            /* Required declarations: */
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            /* Limit the text block to three lines */
+            -webkit-line-clamp: 1;
+        }
+
+        .min-width-93 {
+            min-width: 85px;
+        }
+
+        .d-none-not-important {
+            display: none;
+        }
+
+        .modal-list-hover a:hover {
+            color: #212529;
+        }
+
+        .modal-share {
+            max-width: none !important;
+        }
+
+        .a-href-colors {
+            color: #FF9B9B;
+        }
+
+        .centered-genres-names {
+            position: absolute;
+            top: 88%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 107px;
+        }
+
+        @media (min-width: 576px) {
+            .centered-genres-names {
+                position: absolute;
+                top: 84%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .centered-genres-names {
+                position: absolute;
+                top: 80%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .disabled-option-header {
+            color: rgba(0, 0, 0, .3) !important;
+        }
+
+        .song-detail-adjust {
+            min-width: 21px;
+        }
+
+        @media (min-width: 1200px) {
+            .generic-img-adjust {
+                height: 100%;
+            }
+        }
+
+        .container-border-cont-6 {
+            background: linear-gradient(133.29deg, #FC7272 0%, #B24646 100%);
+            height: 2px;
+            display: flex;
+        }
+
+        @media (min-width: 768px) {
+            .container-border-cont-6 {
+                background: linear-gradient(133.29deg, #FC7272 0%, #B24646 100%);
+                height: 6px;
+                display: flex;
+            }
+        }
+
+        .album-detail-statistics-icons {
+            height: 39px;
+            width: 39px;
+        }
+
+        .default_underline {
+            text-decoration: underline;
+            text-decoration-color: #FF9B9B;
+        }
+
+        .caret-active {
+            color: #F06B6B
+        }
+
+        .album-detail-charted-in {
+            color: #9b9b9b;
+            font-family: Roboto;
+            font-size: 15px;
+            line-height: 18px;
+        }
+
+        @media (min-width: 576px) {
+            .album-detail-charted-in {
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .album-detail-charted-in {
+                font-size: 17px;
+                line-height: 20px;
+            }
+        }
+
+        .album-detail-charted-bold {
+            color: #9b9b9b;
+            font-family: Roboto;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @media (min-width: 576px) {
+            .album-detail-charted-bold {
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .album-detail-charted-bold {
+                font-size: 17px;
+                line-height: 20px;
+            }
+        }
+
+        .album-detail-link-under {
+            text-decoration: underline;
+            text-decoration-color: #9b9b9b;
+        }
+
+        .album-detail-songs {
+            color: #8A8A8A;
+            font-family: Roboto;
+            font-size: 19px;
+            font-weight: bold;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        @media (min-width: 1200px) {
+            .album-detail-songs {
+                color: #8A8A8A;
+                font-family: Roboto;
+                font-size: 21px;
+                font-weight: bold;
+                line-height: 24px;
+                text-align: center;
+            }
+        }
+
+        .lateral-info-highlights {
+            border-radius: 11px;
+            background-color: #FFFFFF;
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.11);
+            min-height: 73px;
+        }
+
+        .lateral-info-title-highlights {
+            color: #6C6C6C;
+            font-family: Roboto;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 19px;
+        }
+
+        .lateral-info-highlight-text {
+            color: #6C6C6C;
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+        }
+
+        .lateral-info-rank-icons {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            z-index: 99;
+        }
+
+        .top-bottom-rank-icons {
+            position: absolute;
+            top: 0;
+            left: -16px;
+            z-index: 99;
+        }
+
+        .lateral-info-highlights-non-movers {
+            border-radius: 11px;
+            background-color: #FFFFFF;
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.11);
+            min-height: 30px;
+        }
+
+        .white-color {
+            color: white;
+        }
+
+        .search-hover:hover {
+            color: #FF9B9B;
+        }
+
+        .top-icons-chart-highlights {
+            width: 30px;
+            height: 30px;
+        }
+
+        .pl-67 {
+            padding-left: 67px;
+        }
+
+        @media (max-width: 576px) {
+            .artist-detail-apple-logo {
+                height: 30px;
+                width: 92px;
+            }
+        }
+
+        /*Artist Detail*/
+        .artist-detail-album-row {
+            height: 86px;
+            border-radius: 5px;
+            background-color: #FFFFFF;
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.09);
+        }
+
+        .artist-detail-card-image {
+            height: 79px;
+            border-radius: 6px;
+            width: 78px;
+        }
+
+        .artist-detail-card-text {
+            color: #6C6C6C;
+            font-family: Roboto;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 21px;
+        }
+
+        .artist-detail-caret-color {
+            color: #9b9b9b;
+        }
+
+        .artist-detail-card-drop-text {
+            color: #9B9B9B;
+            font-family: Roboto;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: center;
+            text-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .artist-detail-card-background {
+            background-color: white;
+        }
+
+        .artist-detail-card-number {
+            color: #828282;
+            font-family: Roboto;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 35px;
+            text-align: center;
+        }
+
+        .artist-detail-card-country {
+            color: #6C6C6C;
+            font-family: Roboto;
+            font-size: 17px;
+            line-height: 20px;
+        }
+
+        .top-no-data {
+            color: #9C9C9C;
+        }
+
+        .map-song-info {
+            border-radius: 15px;
+            min-width: 180px;
+            max-width: 220px;
+            width: max-content;
+        }
+
+        @media (min-width: 576px) {
+            .map-song-info {
+                max-width: 320px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .map-song-info {
+                max-width: 384px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .map-song-info {
+                max-width: 444px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .map-song-info {
+                border-radius: 15px;
+                min-width: 280px;
+                max-width: 614px;
+            }
+        }
+
+        .map-info-border-top {
+            border-top: 2px solid #49505780;
+        }
+
+        .map-info-border-right {
+            border-right: 1px solid #49505780;
+        }
+
+        .map-info-border-left {
+            border-left: 1px solid #49505780;
+        }
+
+        .map-max-content {
+            white-space: nowrap;
+        }
+
+        .map-labels-choice {
+            color: #8E8E8E;
+            font-family: Roboto;
+            font-size: 18px;
+            line-height: 21px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .map-attributions {
+            font-size: 14px;
+        }
+
+        @media (min-width: 1200px) {
+            .artist-detail-container-header {
+                position: relative;
+            }
+        }
+
+        .bootstrap-select .dropdown-menu {
+            padding-top: 0px !important;
+            border-radius: 18px;
+        }
+
+        .caret {
+            display: inline-block;
+            margin-left: .255em;
+            vertical-align: .255em;
+            content: "";
+            border-top: .3em solid;
+            border-right: .3em solid transparent;
+            border-bottom: 0;
+            border-left: .3em solid transparent;
+        }
+
+        #platform_dropdown:hover #dropdownPlatforms {
+            display: block;
+        }
+
+        .bootstrap-datetimepicker-widget table td.day:hover,
+        .bootstrap-datetimepicker-widget table td.hour:hover,
+        .bootstrap-datetimepicker-widget table td.minute:hover,
+        .bootstrap-datetimepicker-widget table td.second:hover {
+            background: red !important;
+            cursor: pointer;
+        }
+
+        #weeklyDatePicker {
+            border: unset;
+        }
+
+        .pr-45 {
+            padding-right: 2.5rem;
+        }
+
+        .search-song-card .search-song-title:first-child {}
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+            border: 1px solid green;
+            -webkit-text-fill-color: grey;
+            -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+    </style>
+    <link href="./rank-info-all/css/css.css"
+        rel="stylesheet">
+    <link href="./rank-info-all/css/all.css"
+        rel="stylesheet">
+    <script
+        src="./rank-info-all/js/jquery-3.js">
+    </script>
+    <script defer="defer"
+        src="./rank-info-all/js/popper.js">
+    </script>
+    <script defer="defer"
+        src="./rank-info-all/js/packed.js"
+        type="text/javascript"></script>
+    <style type="text/css"
+        data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">
+        .fb_hidden {
+            position: absolute;
+            top: -10000px;
+            z-index: 10001
+        }
+
+        .fb_reposition {
+            overflow: hidden;
+            position: relative
+        }
+
+        .fb_invisible {
+            display: none
+        }
+
+        .fb_reset {
+            background: none;
+            border: 0;
+            border-spacing: 0;
+            color: #000;
+            cursor: auto;
+            direction: ltr;
+            font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+            font-size: 11px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            letter-spacing: normal;
+            line-height: 1;
+            margin: 0;
+            overflow: visible;
+            padding: 0;
+            text-align: left;
+            text-decoration: none;
+            text-indent: 0;
+            text-shadow: none;
+            text-transform: none;
+            visibility: visible;
+            white-space: normal;
+            word-spacing: normal
+        }
+
+        .fb_reset>div {
+            overflow: hidden
+        }
+
+        @keyframes fb_transform {
+            from {
+                opacity: 0;
+                transform: scale(.95)
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1)
+            }
+        }
+
+        .fb_animate {
+            animation: fb_transform .3s forwards
+        }
+
+        .fb_dialog {
+            background: rgba(82, 82, 82, .7);
+            position: absolute;
+            top: -10000px;
+            z-index: 10001
+        }
+
+        .fb_dialog_advanced {
+            border-radius: 8px;
+            padding: 10px
+        }
+
+        .fb_dialog_content {
+            background: #fff;
+            color: #373737
+        }
+
+        .fb_dialog_close_icon {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;
+            cursor: pointer;
+            display: block;
+            height: 15px;
+            position: absolute;
+            right: 18px;
+            top: 17px;
+            width: 15px
+        }
+
+        .fb_dialog_mobile .fb_dialog_close_icon {
+            left: 5px;
+            right: auto;
+            top: 5px
+        }
+
+        .fb_dialog_padding {
+            background-color: transparent;
+            position: absolute;
+            width: 1px;
+            z-index: -1
+        }
+
+        .fb_dialog_close_icon:hover {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent
+        }
+
+        .fb_dialog_close_icon:active {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent
+        }
+
+        .fb_dialog_iframe {
+            line-height: 0
+        }
+
+        .fb_dialog_content .dialog_title {
+            background: #6d84b4;
+            border: 1px solid #365899;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0
+        }
+
+        .fb_dialog_content .dialog_title>span {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;
+            float: left;
+            padding: 5px 0 7px 26px
+        }
+
+        body.fb_hidden {
+            height: 100%;
+            left: 0;
+            margin: 0;
+            overflow: visible;
+            position: absolute;
+            top: -10000px;
+            transform: none;
+            width: 100%
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;
+            min-height: 100%;
+            min-width: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            z-index: 10001
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading.centered {
+            background: none;
+            height: auto;
+            min-height: initial;
+            min-width: initial;
+            width: auto
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner {
+            width: 100%
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content {
+            background: none
+        }
+
+        .loading.centered #fb_dialog_loader_close {
+            clear: both;
+            color: #fff;
+            display: block;
+            font-size: 18px;
+            padding-top: 20px
+        }
+
+        #fb-root #fb_dialog_ipad_overlay {
+            background: rgba(0, 0, 0, .4);
+            bottom: 0;
+            left: 0;
+            min-height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 10000
+        }
+
+        #fb-root #fb_dialog_ipad_overlay.hidden {
+            display: none
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading iframe {
+            visibility: hidden
+        }
+
+        .fb_dialog_mobile .fb_dialog_iframe {
+            position: sticky;
+            top: 0
+        }
+
+        .fb_dialog_content .dialog_header {
+            background: linear-gradient(from(#738aba), to(#2c4987));
+            border-bottom: 1px solid;
+            border-color: #043b87;
+            box-shadow: white 0 1px 1px -1px inset;
+            color: #fff;
+            font: bold 14px Helvetica, sans-serif;
+            text-overflow: ellipsis;
+            text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0;
+            vertical-align: middle;
+            white-space: nowrap
+        }
+
+        .fb_dialog_content .dialog_header table {
+            height: 43px;
+            width: 100%
+        }
+
+        .fb_dialog_content .dialog_header td.header_left {
+            font-size: 12px;
+            padding-left: 5px;
+            vertical-align: middle;
+            width: 60px
+        }
+
+        .fb_dialog_content .dialog_header td.header_right {
+            font-size: 12px;
+            padding-right: 5px;
+            vertical-align: middle;
+            width: 60px
+        }
+
+        .fb_dialog_content .touchable_button {
+            background: linear-gradient(from(#4267B2), to(#2a4887));
+            background-clip: padding-box;
+            border: 1px solid #29487d;
+            border-radius: 3px;
+            display: inline-block;
+            line-height: 18px;
+            margin-top: 3px;
+            max-width: 85px;
+            padding: 4px 12px;
+            position: relative
+        }
+
+        .fb_dialog_content .dialog_header .touchable_button input {
+            background: none;
+            border: none;
+            color: #fff;
+            font: bold 12px Helvetica, sans-serif;
+            margin: 2px -12px;
+            padding: 2px 6px 3px 6px;
+            text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
+        }
+
+        .fb_dialog_content .dialog_header .header_center {
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 18px;
+            text-align: center;
+            vertical-align: middle
+        }
+
+        .fb_dialog_content .dialog_content {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;
+            border: 1px solid #4a4a4a;
+            border-bottom: 0;
+            border-top: 0;
+            height: 150px
+        }
+
+        .fb_dialog_content .dialog_footer {
+            background: #f5f6f7;
+            border: 1px solid #4a4a4a;
+            border-top-color: #ccc;
+            height: 40px
+        }
+
+        #fb_dialog_loader_close {
+            float: left
+        }
+
+        .fb_dialog.fb_dialog_mobile .fb_dialog_close_icon {
+            visibility: hidden
+        }
+
+        #fb_dialog_loader_spinner {
+            animation: rotateSpinner 1.2s linear infinite;
+            background-color: transparent;
+            background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            height: 24px;
+            width: 24px
+        }
+
+        @keyframes rotateSpinner {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+        .fb_iframe_widget {
+            display: inline-block;
+            position: relative
+        }
+
+        .fb_iframe_widget span {
+            display: inline-block;
+            position: relative;
+            text-align: justify
+        }
+
+        .fb_iframe_widget iframe {
+            position: absolute
+        }
+
+        .fb_iframe_widget_fluid_desktop,
+        .fb_iframe_widget_fluid_desktop span,
+        .fb_iframe_widget_fluid_desktop iframe {
+            max-width: 100%
+        }
+
+        .fb_iframe_widget_fluid_desktop iframe {
+            min-width: 220px;
+            position: relative
+        }
+
+        .fb_iframe_widget_lift {
+            z-index: 1
+        }
+
+        .fb_iframe_widget_fluid {
+            display: inline
+        }
+
+        .fb_iframe_widget_fluid span {
+            width: 100%
+        }
+
+        .fb_mpn_mobile_landing_page_slide_out {
+            animation-duration: 200ms;
+            animation-name: fb_mpn_landing_page_slide_out;
+            transition-timing-function: ease-in
+        }
+
+        .fb_mpn_mobile_landing_page_slide_out_from_left {
+            animation-duration: 200ms;
+            animation-name: fb_mpn_landing_page_slide_out_from_left;
+            transition-timing-function: ease-in
+        }
+
+        .fb_mpn_mobile_landing_page_slide_up {
+            animation-duration: 500ms;
+            animation-name: fb_mpn_landing_page_slide_up;
+            transition-timing-function: ease-in
+        }
+
+        .fb_mpn_mobile_bounce_in {
+            animation-duration: 300ms;
+            animation-name: fb_mpn_bounce_in;
+            transition-timing-function: ease-in
+        }
+
+        .fb_mpn_mobile_bounce_out {
+            animation-duration: 300ms;
+            animation-name: fb_mpn_bounce_out;
+            transition-timing-function: ease-in
+        }
+
+        .fb_mpn_mobile_bounce_out_v2 {
+            animation-duration: 300ms;
+            animation-name: fb_mpn_fade_out;
+            transition-timing-function: ease-in
+        }
+
+        .fb_customer_chat_bounce_in_v2 {
+            animation-duration: 300ms;
+            animation-name: fb_bounce_in_v2;
+            transition-timing-function: ease-in
+        }
+
+        .fb_customer_chat_bounce_in_from_left {
+            animation-duration: 300ms;
+            animation-name: fb_bounce_in_from_left;
+            transition-timing-function: ease-in
+        }
+
+        .fb_customer_chat_bounce_out_v2 {
+            animation-duration: 300ms;
+            animation-name: fb_bounce_out_v2;
+            transition-timing-function: ease-in
+        }
+
+        .fb_customer_chat_bounce_out_from_left {
+            animation-duration: 300ms;
+            animation-name: fb_bounce_out_from_left;
+            transition-timing-function: ease-in
+        }
+
+        .fb_invisible_flow {
+            display: inherit;
+            height: 0;
+            overflow-x: hidden;
+            width: 0
+        }
+
+        @keyframes fb_mpn_landing_page_slide_out {
+            0% {
+                margin: 0 12px;
+                width: 100% - 24px
+            }
+
+            60% {
+                border-radius: 18px
+            }
+
+            100% {
+                border-radius: 50%;
+                margin: 0 24px;
+                width: 60px
+            }
+        }
+
+        @keyframes fb_mpn_landing_page_slide_out_from_left {
+            0% {
+                left: 12px;
+                width: 100% - 24px
+            }
+
+            60% {
+                border-radius: 18px
+            }
+
+            100% {
+                border-radius: 50%;
+                left: 12px;
+                width: 60px
+            }
+        }
+
+        @keyframes fb_mpn_landing_page_slide_up {
+            0% {
+                bottom: 0;
+                opacity: 0
+            }
+
+            100% {
+                bottom: 24px;
+                opacity: 1
+            }
+        }
+
+        @keyframes fb_mpn_bounce_in {
+            0% {
+                opacity: .5;
+                top: 100%
+            }
+
+            100% {
+                opacity: 1;
+                top: 0
+            }
+        }
+
+        @keyframes fb_mpn_fade_out {
+            0% {
+                bottom: 30px;
+                opacity: 1
+            }
+
+            100% {
+                bottom: 0;
+                opacity: 0
+            }
+        }
+
+        @keyframes fb_mpn_bounce_out {
+            0% {
+                opacity: 1;
+                top: 0
+            }
+
+            100% {
+                opacity: .5;
+                top: 100%
+            }
+        }
+
+        @keyframes fb_bounce_in_v2 {
+            0% {
+                opacity: 0;
+                transform: scale(0, 0);
+                transform-origin: bottom right
+            }
+
+            50% {
+                transform: scale(1.03, 1.03);
+                transform-origin: bottom right
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1, 1);
+                transform-origin: bottom right
+            }
+        }
+
+        @keyframes fb_bounce_in_from_left {
+            0% {
+                opacity: 0;
+                transform: scale(0, 0);
+                transform-origin: bottom left
+            }
+
+            50% {
+                transform: scale(1.03, 1.03);
+                transform-origin: bottom left
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1, 1);
+                transform-origin: bottom left
+            }
+        }
+
+        @keyframes fb_bounce_out_v2 {
+            0% {
+                opacity: 1;
+                transform: scale(1, 1);
+                transform-origin: bottom right
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0, 0);
+                transform-origin: bottom right
+            }
+        }
+
+        @keyframes fb_bounce_out_from_left {
+            0% {
+                opacity: 1;
+                transform: scale(1, 1);
+                transform-origin: bottom left
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0, 0);
+                transform-origin: bottom left
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            0% {
+                opacity: .1;
+                transform: translateY(100%)
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes slideInFromBottomDelay {
+            0% {
+                opacity: 0;
+                transform: translateY(100%)
+            }
+
+            97% {
+                opacity: 0;
+                transform: translateY(100%)
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <link
+        href="./rank-info-all/css/song_detail.css"
+        rel="stylesheet" type="text/css">
+    <header id="header" style="background-color: white">
+        <div class="container p-0 container-max-width">
+            <div class="container-fluid container-header-size">
+                <nav class="navbar navbar-expand-lg navbar-light navbar-details p-0 pt-lg-4"
+                    style="background-color: white">
+                    <div class="row w-100 m-0 justify-content-between">
+                        <div class="col-6 col-sm-5 col-lg-1"><a class="navbar-brand pb-0"
+                                href="../index.htm"><img alt="pkd charts"
+                                    src="./rank-info-all/icons/logo_topcharts.svg"
+                                    style="height: 33px"></a></div>
+                        <div
+                            class="col-6 col-sm-7 col-lg-6 col-xl-11 d-flex pr-0 flex-row-reverse flex-xl-row align-items-center align-items-xl-end justify-content-lg-around">
+                            <div class="col-6 col-lg-7 adjust-max-width p-0 ml-sm-3"><button
+                                    aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                                    aria-label="Toggle navigation"
+                                    class="border-col-search pl-0 no-outline hide-at-1200"
+                                    data-target="#modalNavigation" data-toggle="modal"
+                                    style="background-color: transparent;z-index: 2" type="button"><i
+                                        class="fas fa-align-justify search-grad"></i></button>
+                                <div class="show-at-1200 collapse navbar-collapse flex-lg-grow-0"
+                                    id="navbarTogglerDemo02">
+                                    <ul
+                                        class="navbar-nav mr-auto mt-2 mt-lg-0 flex-grow-1 justify-content-around align-items-center">
+                                        <li class="nav-item mx-1" id="/songs"><a
+                                                class="nav-link header header-titles-text"
+                                                href="#">Top series charts<span
+                                                    class="sr-only">(current)</span></a></li>
+                                        <li class="nav-item mx-1"><a class="nav-link header-titles-text"
+                                                href="#">Top peliculas charts</a></li>
+                                        <li class="nav-item mx-1"><a class="nav-link header-titles-text"
+                                                href="#">Hot List</a></li>
+                                        <li class="nav-item mx-1" id="/genres"><a class="nav-link header-titles-text"
+                                                href="#">Mas buscado</a></li>
+                                        <li id="platform_dropdown">
+                                            <div class="dropdown header-titles-text"><a
+                                                    class="dropdown-toggle header-titles-text" data-toggle="dropdown"
+                                                    role="button" type="button">Charts</a>
+                                                <ul class="dropdown-menu dropdown-text" id="dropdownPlatforms">
+                                                    <li class="dropdown-submenu hover-effect"><a class="test" href="#"
+                                                            tabindex="-1">24 hrs<i
+                                                                class="fas fa-caret-right ml-1"></i></a>
+                                                        <ul class="dropdown-menu dropdown-text">
+                                                            <li><a href="#"
+                                                                    tabindex="-1">Tiempo Real</a></li>
+                                                            <li><a href="#
+                                                                    tabindex="-1">Diario</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown-submenu hover-effect"><a class="test" href="#"
+                                                            tabindex="-1">Mas Buscado<i
+                                                                class="fas fa-caret-right ml-1"></i></a>
+                                                        <ul class="dropdown-menu dropdown-text">
+                                                            <li><a href="#"
+                                                                    tabindex="-1">Tiempo Real</a></li>
+                                                            <li><a href="#"
+                                                                    tabindex="-1">Diario</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="hover-effect"><a
+                                                            href="#"
+                                                            tabindex="-1">Mas descargado</a></li>
+                                                    <li class="hover-effect"><a
+                                                            href="#"
+                                                            tabindex="-1">Emision Actualmente</a></li>
+                                                    <li class="dropdown-submenu hover-effect"><a class="test" href="#"
+                                                            tabindex="-1">Mas Vistos<i
+                                                                class="fas fa-caret-right ml-1"></i></a>
+                                                        <ul class="dropdown-menu dropdown-text">
+                                                            <li><a href="#"
+                                                                    tabindex="-1">Tiempo Real</a></li>
+                                                            <li><a href="#"
+                                                                    tabindex="-1">Diario</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="hover-effect"><a
+                                                            href="#"
+                                                            tabindex="-1">Hot List</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="modalNavigation"
+                role="dialog" tabindex="-1">
+                <div class="modal-dialog h-100 w-100 m-0" role="document">
+                    <div class="modal-content w-100 h-100"
+                        style="background: linear-gradient(164.7deg, rgb(0, 0, 0) 0%, rgb(39, 9, 6) 100%);">
+                        <div class="modal-header align-items-center"><img alt="Top Charts" class="img-fluid"
+                                src="./rank-info-all/icons/logo_topcharts_modal.svg"><button
+                                aria-label="Close" class="close" data-dismiss="modal" style="opacity: 1;"
+                                type="button"><i class="far fa-times-circle"
+                                    style="color: white; text-shadow: 0 0"></i></button></div>
+                        <div class="modal-body modal-list-hover p-0">
+                            <nav class="list-group">
+                                <div class="hamburger-links hamburger-text-style align-items-center px-3"
+                                    onclick="showDropdown('dropdown1');addRemoveCaret('modal-option-1')"
+                                    style="height: 48px"><a class="list-group-item p-0"
+                                        href="#">24 hrs</a><button
+                                        aria-expanded="false" aria-haspopup="true" class="btn pr-1" style="color: white"
+                                        type="button"><i class="fas fa-caret-down" id="modal-option-1"></i></button>
+                                </div>
+                                <div class="list-group" id="dropdown1" style="display: none;background: linear-gradient(133.29deg,
+                            rgba(252,114,114,0.72) 0%, #B24646 100%);">
+                                    <div class="row m-0 hamburger-text-style"><a
+                                            class="list-group-item adjust-center px-5 modal-items-href"
+                                            href="#">Tiempo Real <i aria-hidden="true" class="fas fa-caret-right"></i></a>
+                                    </div>
+                                    <div class="dropdown-divider modal-dropdown-margin"></div>
+                                    <div class="row m-0 hamburger-text-style"><a
+                                            class="list-group-item adjust-center px-5 modal-items-href"
+                                            href="#">Diario <i aria-hidden="true" class="fas fa-caret-right"></i></a></div>
+                                    <div class="dropdown-divider modal-dropdown-margin"></div>
+                                    <div class="row m-0 hamburger-text-style"><a
+                                            class="list-group-item adjust-center px-5 modal-items-href"
+                                            href="#">Mas buscado <i aria-hidden="true" class="fas fa-caret-right"></i></a></div>
+                                    <div class="dropdown-divider modal-dropdown-margin"></div>
+                                    <div class="row m-0 hamburger-text-style"><a
+                                            class="list-group-item adjust-center px-5 modal-items-href"
+                                            href="#">Emision Actualmente <i aria-hidden="true" class="fas fa-caret-right"></i></a></div>
+                                    <div class="dropdown-divider modal-dropdown-margin"></div>
+                                    <div class="row m-0 hamburger-text-style"><a
+                                            class="list-group-item adjust-center px-5 modal-items-href"
+                                            href="#">Mas Vistos
+                                            <i aria-hidden="true" class="fas fa-caret-right"></i></a></div>
+                                    <div class="dropdown-divider modal-dropdown-margin"></div>
+                                    <div class="row m-0 hamburger-text-style"><a
+                                            class="list-group-item adjust-center px-5 modal-items-href"
+                                            href="#">Hot List
+                                            <i aria-hidden="true" class="fas fa-caret-right"></i></a></div>
+                                </div>
+                                <div class="row m-0 hamburger-text-style modal-items-rows"><a
+                                        class="list-group-item modal-items"
+                                        href="#">Mas buscado <i
+                                            aria-hidden="true" class="fas fa-caret-right" id="modal-option-4"></i></a>
+                                </div>
+                                <div class="hamburger-links hamburger-text-style align-items-center px-3"
+                                    onclick="showDropdown('dropdown2');addRemoveCaret('modal-option-2')"
+                                    style="height: 48px"><a class="list-group-item p-0">Top 100 General</a><button
+                                        aria-expanded="false" aria-haspopup="true" class="btn pr-1" style="color: white"
+                                        type="button"><i class="fas fa-caret-down" id="modal-option-2"></i></button>
+                                </div>
+                                <div class="list-group" id="dropdown2" style="display: none;background: linear-gradient(133.29deg,
+                            rgba(252,114,114,0.72) 0%, #B24646 100%);">
+                                    <div class="row m-0 hamburger-text-style"><a
+                                            class="list-group-item adjust-center px-5 modal-items-href"
+                                            href="#">Mas descargado
+                                            <i aria-hidden="true" class="fas fa-caret-right"></i></a></div>
+                                    <div class="dropdown-divider modal-dropdown-margin"></div>
+                                    <div class="row m-0 hamburger-text-style"><a
+                                            class="list-group-item adjust-center px-5 modal-items-href"
+                                            href="#">Mas trasmitido
+                                            <i aria-hidden="true" class="fas fa-caret-right"></i></a></div>
+                                    <div class="dropdown-divider modal-dropdown-margin"></div>
+                                    <div class="row m-0 hamburger-text-style"><a
+                                            class="list-group-item adjust-center px-5 modal-items-href"
+                                            href="#">Popularidad
+                                            <i aria-hidden="true" class="fas fa-caret-right"></i></a></div>
+                                </div>
+                                <div class="hamburger-links hamburger-text-style align-items-center px-3"
+                                    onclick="showDropdown('dropdown3');addRemoveCaret('modal-option-3')"
+                                    style=" height: 48px"><a class="list-group-item p-0"
+                                        href="https://www.top-charts.com/es/albumes">Mas Buscado</a><button
+                                        aria-expanded="false" aria-haspopup="true" class="btn pr-1" style="color: white"
+                                        type="button"><i class="fas fa-caret-down" id="modal-option-3"></i></button>
+                                </div>
+                                <div class="list-group" id="dropdown3" style="display: none;background: linear-gradient(133.29deg,
+                            rgba(252,114,114,0.72) 0%, #B24646 100%);">
+                                    <div class="row m-0 hamburger-text-style"><a
+                                            class="list-group-item adjust-center px-5 modal-items-href"
+                                            href="#">Tiempo Real <i aria-hidden="true" class="fas fa-caret-right"></i></a>
+                                    </div>
+                                    <div class="dropdown-divider modal-dropdown-margin"></div>
+                                    <div class="row m-0 hamburger-text-style"><a
+                                            class="list-group-item adjust-center px-5 modal-items-href"
+                                            href="#">Diario <i aria-hidden="true" class="fas fa-caret-right"></i></a></div>
+                                    <div class="dropdown-divider modal-dropdown-margin"></div>
+                                    <div class="row m-0 hamburger-text-style"><a
+                                            class="list-group-item adjust-center px-5 modal-items-href"
+                                            href="#">Mensual<i aria-hidden="true" class="fas fa-caret-right"></i></a></div>
+                                </div>
+                                <div class="row m-0 hamburger-text-style modal-items-rows" disabled=""><a
+                                        class="list-group-item modal-items"
+                                        href="#">Hot List <i aria-hidden="true"
+                                            class="fas fa-caret-right" id="modal-option-3"></i></a></div>
+                            
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row m-0 container-border-genre"></div>
+    <div class="row mx-0 justify-content-center hide-at-768">
+        <div class="lawmaker-320-100" id="law-maker-2">
+            
+        </div>
+    </div>
+    <div class="container-fluid song-detail-outer p-0">
+        <div
+            class="container-fluid p-0 song-detail-grad-box d-flex flex-column justify-content-center justify-content-xl-end justify-content-lg-between">
+            <div class="row m-0 justify-content-center align-items-center mb-md-0 mt-lg-2 mt-xl-0 flex-nowrap">
+                <div class="align-self-center hide-at-768 ml-4 mr-2">
+                    <div class="container-img-text"><img alt="High Heat artwork"
+                            class="song-detail-mobile-image" src=""
+                            srcset="./rank-info-all/img/bc.png">
+                    </div>
+                </div>
+                <div class="pl-1 p-0 flex-grow-1">
+                    <div class="row m-0 justify-content-start justify-content-md-center">
+                        <h1 class="song-detail-grad-title mb-xl-0 w-100 text-left text-md-center"><span
+                                class="song-detail-max-lines">High Heat</span> <span
+                                class="song-detail-grad-subtitle mt-lg-3 mt-xl-0"><a
+                                    href="#">Netflix</a></span></h1>
+                    </div>
+                    <div class="row m-0 info-detail-artist flex-nowrap mb-2 mb-sm-3 mb-xl-4 hide-at-768">
+                        <div class="text-right song-detail-alb-pos song-detail-album px-1"><span>Mas visto</span></div>
+                        <div class="flex-fill song-detail-album px-1 text-left" style="font-weight: normal"><span
+                                class="truncate-line">#1</span></div>
+                    </div>
+                    <div class="row m-0 info-detail-artist mb-2 mb-xl-4 text-nowrap hide-at-768 flex-sm-wrap">
+                        <div class="col-3 max-width-fit song-detail-album px-1"><span>Fecha de lanzamiento:</span></div>
+                        <div class="song-detail-album px-1 text-truncate" style="font-weight: normal"><span>octubre 30,
+                                2012</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mx-0 justify-content-md-start align-items-xl-center">
+                <div class="col-5"></div>
+                <div class="col-md-6 col-xl-6 m-col-song-detail flex-column show-at-768">
+                    <div class="row m-0 show-at-768 mb-2 mb-xl-4">
+                        <div class="col-4 text-left p-md-0">
+                        </div>
+                    </div>
+                    <div
+                        class="row m-0 justify-content-center justify-content-md-start info-detail-artist mb-2 mb-sm-3 mb-xl-4 text-nowrap">
+                        <div class="col-4 text-right song-detail-alb-pos max-width-fit song-detail-album px-1">
+                            <span>Mas Visto</span></div>
+                        <div class="col-6 col-lg-9 song-detail-album px-1 max-width-fit text-left text-truncate"
+                            style="font-weight: normal"><span>#1</span></div>
+                    </div>
+                    <div
+                        class="row m-0 justify-content-center justify-content-md-start info-detail-artist mb-2 text-nowrap">
+                        <div class="col-3 max-width-fit song-detail-album px-1"><span>Fecha de lanzamiento:</span></div>
+                        <div class="col-3 max-width-fit song-detail-album px-1" style="font-weight: normal">
+                            <span>octubre 30, 2012</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="centered show-at-768 song-detail-image-center"><img
+                    alt="High Heat artwork" class="song-detail-photo-size"
+                    src="./rank-info-all/img/bc.png"
+                    style="border-radius: 10px;box-shadow: 2px 3px 1px 0 rgba(0,0,0,0.2);"></div>
+        </div>
+    </div>
+    <div class="container p-0 m-0 mx-sm-auto mx-xl-auto container-max-width">
+        <div class="container-fluid mb-2 mt-n3 mt-lg-0 p-xl-0">
+            <div class="row mx-xl-0">
+                <div class="col-xl-8 col-12 p-0">
+                    <div class="container-fluid mb-3 px-xl-0">
+                        <div class="row container-border-tops-320-576 m-md-0"></div>
+                        <div
+                            class="row px-3 mb-lg-0 align-items-center song-card m-xl-0 position-relative justify-content-between row-title">
+                            <span class="text-truncate top-chart-title-text">High Heat en las listas</span>
+                            <div class="module-border-wrap mx-3 position-absolute"></div>
+                        </div>
+                        <div class="row m-xl-0 container-border-tops-576-1200"></div>
+                    </div>
+                    <div class="container-fluid mb-3 px-xl-0">
+                        <div class="row info-detail-artist-top-played align-items-center mx-n1 mx-lg-0">
+                            <div class="col-10 p-0 col-xl-7 pl-0 d-flex flex-row text-truncate align-items-center">
+                        
+                                <div class="col-10 pl-1 text-truncate"><span class="artist-detail-country-text">Debut en
+                                        la lista global</span></div>
+                            </div>
+                            <div class="col-2 col-xl-1 text-center"><span
+                                    class="number-of-plays-without-bord">#14</span></div>
+                            <div class="col-4 justify-content-start show-at-1200 pr-4" style="padding-left: 67px"><span
+                                        class="number-of-plays-without-bord default_underline">(Mayo 09 2021)</span>
+                            </div>
+                        </div>
+                        <div class="row info-detail-artist-top-played align-items-center mx-n1 mx-lg-0">
+                            <div class="col-10 p-0 col-xl-7 pl-0 d-flex flex-row text-truncate align-items-center">
+                                
+                                <div class="col-10 pl-1 text-truncate"><span class="artist-detail-country-text">Posición
+                                        más alta en la lista</span></div>
+                            </div>
+                            <div class="col-2 col-xl-1 text-center"><span
+                                    class="number-of-plays-without-bord">#14</span></div>
+                            <div class="col-4 justify-content-start show-at-1200 pr-4" style="padding-left: 67px"><span
+                                        class="number-of-plays-without-bord default_underline">(Mayo 09 2021)</span>
+                            </div>
+                        </div>
+                        <div class="row info-detail-artist-top-played align-items-center mx-n1 mx-lg-0">
+                            <div class="col-10 p-0 col-xl-7 pl-0 d-flex flex-row text-truncate align-items-center">
+                                
+                                <div class="col-10 pl-1 text-truncate"><span class="artist-detail-country-text">Posición
+                                        más reciente en la lista</span></div>
+                            </div>
+                            <div class="col-2 col-xl-1 text-center"><span
+                                    class="number-of-plays-without-bord">#15</span></div>
+                            <div class="col-4 justify-content-start show-at-1200 pr-4" style="padding-left: 67px"><span
+                                        class="number-of-plays-without-bord default_underline">(Mayo 16 2021)</span>
+                            </div>
+                        </div>
+                        <div class="row info-detail-artist-top-played align-items-center mx-n1 mx-lg-0">
+                            <div class="col-10 p-0 col-xl-7 pl-0 d-flex flex-row text-truncate align-items-center">
+                                 <div class="col-8 pl-1 d-flex text-truncate"><span
+                                        class="artist-detail-country-text">Semanas en la lista global</span></div>
+                            </div>
+                            <div class="col-2 col-xl-1 text-center"><span class="number-of-plays-without-bord">#2</span>
+                            </div>
+                        </div>
+                        <div class="row info-detail-artist-top-played align-items-center mx-n1 mx-lg-0">
+                            <div class="col-10 p-0 col-xl-7 pl-0 d-flex flex-row text-truncate align-items-center">
+                                
+                                <div class="col-10 pl-1 text-truncate"><span class="artist-detail-country-text">Posición
+                                        más alta en la lista de busqueda</span></div>
+                            </div>
+                            <div class="col-2 col-xl-1 text-center"><span class="number-of-plays-without-bord">-</span>
+                            </div>
+                            <div class="col-4 justify-content-start show-at-1200 pr-4"></div>
+                        </div>
+                        <div class="row info-detail-artist-top-played align-items-center mx-n1 mx-lg-0">
+                            <div class="col-10 p-0 col-xl-7 pl-0 d-flex flex-row text-truncate align-items-center">
+                                <div class="col-10 pl-1 text-truncate"><span class="artist-detail-country-text">Posición
+                                        más alta en Hot List</span></div>
+                            </div>
+                            <div class="col-2 col-xl-1 text-center"><span class="number-of-plays-without-bord">-</span>
+                            </div>
+                            <div class="col-4 justify-content-start show-at-1200 pr-4"></div>
+                        </div>
+                        <div class="row info-detail-artist-top-played align-items-center mx-n1 mx-lg-0">
+                            <div class="col-10 p-0 col-xl-7 pl-0 d-flex flex-row text-truncate align-items-center">
+                                <div class="col-10 pl-1 text-truncate"><span class="artist-detail-country-text">Posición
+                                        más alta en la lista de mas visto</span></div>
+                            </div>
+                            <div class="col-2 col-xl-1 text-center"><span class="number-of-plays-without-bord">#1</span>
+                            </div>
+                            <div class="col-4 justify-content-start show-at-1200 pr-4">
+                                <div class="row m-0 align-items-center">
+                                    <div class="col-2 mr-2 px-1 max-width-fit"><img alt="country image"
+                                            class="circular-flag"
+                                            src="./rank-info-all/img/mx.png">
+                                    </div><span
+                                            class="number-of-plays-without-bord default_underline">(Mayo 09
+                                            2021)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row info-detail-artist-top-played align-items-center mx-n1 mx-lg-0">
+                            <div class="col-10 p-0 col-xl-7 pl-0 d-flex flex-row text-truncate align-items-center">
+                                
+                                <div class="col-10 pl-1 text-truncate"><span class="artist-detail-country-text">Posición
+                                        más alta en la lista de 24 hrs</span></div>
+                            </div>
+                            <div class="col-2 col-xl-1 text-center"><span class="number-of-plays-without-bord">-</span>
+                            </div>
+                            <div class="col-4 justify-content-start show-at-1200 pr-4"></div>
+                        </div>
+                        <div class="row info-detail-artist-top-played align-items-center mx-n1 mx-lg-0">
+                            <div class="col-10 p-0 col-xl-7 pl-0 d-flex flex-row text-truncate align-items-center">
+                                <div class="col-10 pl-1 text-truncate"><span class="artist-detail-country-text">Posición
+                                        más alta en la lista de Top series </span></div>
+                            </div>
+                            <div class="col-2 col-xl-1 text-center"><span class="number-of-plays-without-bord">#1</span>
+                            </div>
+                            <div class="col-4 justify-content-start show-at-1200 pr-4">
+                                <div class="row m-0 align-items-center">
+                                    <div class="col-2 mr-2 px-1 max-width-fit"><img alt="country image"
+                                            class="circular-flag"
+                                            src="./rank-info-all/img/mx.png">
+                                    </div><span
+                                            class="number-of-plays-without-bord default_underline">(junio 06
+                                            2021)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12"><span class="album-detail-charted-bold">El Titulo ocupó las listas de
+                                    éxitos de los siguientes países:</span> <span class="album-detail-charted-in"><a
+                                        class="album-detail-charted-in album-detail-link-under"
+                                        href="#">-</a></span>
+                                <span class="album-detail-charted-in"><a
+                                        class="album-detail-charted-in album-detail-link-under"
+                                        href="#">-</a></span>
+                                <span class="album-detail-charted-in"><a
+                                        class="album-detail-charted-in album-detail-link-under"
+                                        href="#">-</a></span>
+                                <span class="album-detail-charted-in"><a
+                                        class="album-detail-charted-in album-detail-link-under"
+                                        href="#">-</a></span>
+                                <span class="album-detail-charted-in"><a
+                                        class="album-detail-charted-in album-detail-link-under"
+                                        href="#">-</a></span>
+                                <span class="album-detail-charted-in"><a
+                                        class="album-detail-charted-in album-detail-link-under"
+                                        href="#">-</a></span></div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    
+                    <div class="row m-0 mb-2">
+                        <div class="col-12 text-left p-0 text-nowrap"><span class="ml-3 top-songs-side-menu">Top
+                                24 hrs</span></div>
+                    </div>
+                    <div class="container-fluid mb-3" id="songs_platforms_links" style="padding-left: 40px">
+                        <div class="row mb-2">
+
+                            <div class="col-8 pl-2 align-self-center"><span class="plataform-icons-text"
+                                    id="applemusic"><a
+                                        href="#">Tiempo Real</a></span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-8 pl-2 align-self-center"><span class="plataform-icons-text" id="itunes"><a
+                                        href="#">Diario</a></span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-8 pl-2 align-self-center"><a
+                                    href="#"><span
+                                        class="plataform-icons-text" id="radio">Mas buscado</span></a></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-8 pl-2 align-self-center"><span class="plataform-icons-text"><a
+                                        href="#">Mas visto</a></span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-8 pl-2 align-self-center"><span class="plataform-icons-text"><a
+                                        href="#">Hot List</a></span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-8 pl-2 align-self-center"><span class="plataform-icons-text" id="total"><a
+                                        href="#">Top series</a></span></div>
+                        </div>
+                    </div>
+                    <div class="row m-0 mt-xl-3 mb-2">
+                        <div class="col-12 text-left p-0 text-nowrap"><span class="ml-3 top-songs-side-menu">Charts</span></div>
+                    </div>
+                    <div class="container-fluid mb-3" id="albums_platforms_links" style="padding-left: 40px">
+                        <div class="row mb-2">
+                            <div class="col-8 pl-2 align-self-center"><span class="plataform-icons-text"
+                                    id="applemusic"><a
+                                        href="#">Mas descargado</a></span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-8 pl-2 align-self-center"><span class="plataform-icons-text" id="itunes"><a
+                                        href="#">Mas transmitido</a></span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-8 pl-2 align-self-center"><span class="plataform-icons-text" id="total"><a
+                                        href="#">Popularidad</a></span></div>
+                        </div>
+                    </div>
+                    <div class="row m-0 mt-xl-3 mb-2">
+                        <div class="col-12 text-left p-0 text-nowrap"><span class="ml-3 top-songs-side-menu">Listas Más
+                                Populares</span></div>
+                    </div>
+                    <div class="container-fluid mb-3" id="charts_genre_links" style="padding-left: 40px">
+                        <div class="row mb-2">
+                            <div class="col-8 pl-2 align-self-center"><span class="plataform-icons-text"><a
+                                        href="#">Top
+                                        100 Series Más Populares</a></span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-8 pl-2 align-self-center"><span class="plataform-icons-text"><a
+                                        href="#">Top
+                                        100 Peliculas Más Populares</a></span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-8 pl-2 align-self-center"><span class="plataform-icons-text" id="radio"><a
+                                        href="#">Top
+                                        100 Dramas Más Populares</a></span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-8 pl-2 align-self-center"><span class="plataform-icons-text" id="total"><a
+                                        href="#">Top
+                                        100 Titulos Más Populares</a></span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-8 pl-2 align-self-center"><span class="plataform-icons-text" id="total"><a
+                                        href="#">Top
+                                        100 Titulos Del Año</a></span></div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="row m-0 container-border-genre-descontinous"></div>
+        <div class="container p-0" style="max-width: none;background-color: white">
+            <div class="container p-0 container-max-width">
+                <div class="container-fluid mb-2 pt-3" style="background-color: white">
+                    <div class="row footer-infos-text justify-content-between justify-content-lg-center no-gutters">
+                        <div class="col-3 col-lg-2 text-center"><a
+                                href="#">Series</a></div>
+                        <div class="col-3 col-lg-2 text-center"><a
+                                href="#">Peliculas</a></div>
+                        <div class="col-3 col-lg-2 text-center"><a
+                                href="#">Dramas   </a></div>
+                        
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-1 mx-4">
+            <div class="container p-0 container-max-width">
+                <div class="container-fluid mb-2 pt-3" style="background-color: white">
+                    <div class="row mb-2">
+                        <div class="col-4">
+                            <div class="row m-0 justify-content-center"><span
+                                    class="footer-navigator-links-titles-text">Series más populares</span></div>
+                            <div class="row justify-content-center m-0 footer-infos-text mb-2"><a class="text-truncate"
+                                    href="#">-</a></div>
+                            <div class="row justify-content-center m-0 footer-infos-text mb-2"><a class="text-truncate"
+                                    href="#">-</a></div>
+                            <div class="row justify-content-center m-0 footer-infos-text mb-2"><a class="text-truncate"
+                                    href="#">-</a></div>
+                            <div class="row justify-content-center m-0 footer-infos-text mb-2"><a class="text-truncate"
+                                    href="#">-</a></div>
+                            <div class="row justify-content-center m-0 footer-infos-text mb-2"><a class="text-truncate"
+                                    href="#">-</a></div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row m-0 justify-content-center"><span
+                                    class="footer-navigator-links-titles-text">Peliculas más populares</span></div>
+                            <div class="row justify-content-center m-0 footer-infos-text mb-2"><a class="text-truncate"
+                                    href="#">-</a></div>
+                            <div class="row justify-content-center m-0 footer-infos-text mb-2"><a class="text-truncate"
+                                    href="#">-</a>
+                            </div>
+                            <div class="row justify-content-center m-0 footer-infos-text mb-2"><a class="text-truncate"
+                                    href="#">-</a></div>
+                            <div class="row justify-content-center m-0 footer-infos-text mb-2"><a class="text-truncate"
+                                    href="#">-</a></div>
+                            <div class="row justify-content-center m-0 footer-infos-text mb-2"><a class="text-truncate"
+                                    href="#">-</a></div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row m-0 justify-content-center"><span
+                                    class="footer-navigator-links-titles-text">Dramas Populares</span></div>
+                            <div class="row justify-content-center m-0 footer-infos-text mb-2"><a class="text-truncate"
+                                    href="#">-</a>
+                            </div>
+                            <div class="row justify-content-center m-0 footer-infos-text mb-2"><a class="text-truncate"
+                                    href="#">-</a>
+                            </div>
+                            <div class="row justify-content-center m-0 footer-infos-text mb-2"><a class="text-truncate"
+                                    href="#">-</a></div>
+                            <div class="row justify-content-center m-0 footer-infos-text mb-2"><a class="text-truncate"
+                                    href="#">-</a></div>
+                            <div class="row justify-content-center m-0 footer-infos-text mb-2"><a class="text-truncate"
+                                    href="#">-</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+            
+        </div>
+        <div class="row m-0 container-footer-copyright-border"></div>
+        <div class="container-fluid">
+            <div class="row footer-copyrights align-items-center position-relative">
+                <div class="col-12 text-center"><span class="">© PkDesigns 2022. Todos Los Derechos Reservados</span></div>
+            </div>
+        </div>
+    </footer>
+    <script defer="defer">
+        var pause_element = $('#pause_song');
+        var play_gif_element = $('#play_gif');
+        var play_element = $('#play_song');
+
+
+        function afterPlay() {
+
+            $('#play').hide();
+            $('#pause').show();
+
+            play_element.removeClass('d-flex');
+            play_element.addClass('d-none');
+
+
+            play_gif_element.removeClass("d-none");
+            play_gif_element.addClass("d-flex");
+
+            pause_element.removeClass('d-none');
+            pause_element.addClass('d-flex');
+
+        }
+
+
+        function hideGifPlayer() {
+
+            $('#play').show();
+            $('#pause').hide();
+
+            play_element.addClass('d-flex');
+            play_element.removeClass('d-none');
+
+
+            play_gif_element.removeClass("d-flex");
+            play_gif_element.addClass("d-none");
+
+
+            pause_element.removeClass('d-flex');
+            pause_element.addClass('d-none');
+
+        }
+    </script>
+    <script defer="defer">
+        function showSongInfoDropDown(id, country) {
+
+            var x = document.getElementById(id);
+            var y = document.getElementById(country);
+
+            if (x.style.display === "none") {
+                y.classList.add("country-drop-border");
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+                y.classList.remove("country-drop-border");
+            }
+        }
+    </script>
+    <script id="song" type="application/json">
+        {
+            "id": 942734272,
+            "name": "Botella Tras Botella",
+            "artist_name": "Conjunto Azabache",
+            "artists_info": [{
+                "image": "https://is2-ssl.mzstatic.com/image/thumb/Music5/v4/bc/16/61/bc1661fc-69e7-6c07-1e87-79f307df31d7/403.jpg/170x170bb.jpeg",
+                "name": "Conjunto Azabache",
+                "slug": "conjunto-azabache"
+            }],
+            "rating": "",
+            "artist_display_name": "Conjunto Azabache",
+            "album": "Te Quiero Mas",
+            "present_in_top": true,
+            "isrc": "TCACB1463676",
+            "artwork_url_small": "https://is5-ssl.mzstatic.com/image/thumb/Music3/v4/53/c3/a8/53c3a8a6-9549-150e-267c-62fefe3c6e3d/859713691117_cover.tif/60x60bb.jpeg",
+            "artwork_url_large": "https://is5-ssl.mzstatic.com/image/thumb/Music3/v4/53/c3/a8/53c3a8a6-9549-150e-267c-62fefe3c6e3d/859713691117_cover.tif/170x170bb.jpeg",
+            "release": "2012-10-30",
+            "slug": "botella-tras-botella-conjunto-azabache",
+            "apple_music_view_url": "https://geo.music.apple.com/mx/album/botella-tras-botella/942734247?i=942734272\u0026app=music\u0026mt=1\u0026at=11l64h\u0026ct=top-charts",
+            "itunes_view_url": "https://geo.music.apple.com/mx/album/botella-tras-botella/942734247?i=942734272\u0026app=itunes\u0026mt=1\u0026at=11l64h\u0026ct=top-charts",
+            "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/Music3/v4/69/69/35/69693534-4c19-07ed-61ea-9082ad360567/mzaf_7444536349149021599.plus.aac.p.m4a",
+            "youtube_video": "mJmFrRFKsYY"
+        }
+    </script>
+    <script>
+        var song = ("song", JSON.parse(document.getElementById('song').textContent));
+    </script>
+    <script defer="defer">
+        var audio;
+        var volume = 1;
+
+        //Hide Pause
+        $('#pause').hide();
+        $('#audio-player').hide();
+
+
+
+        function initAudio(array) {
+
+
+            var song = array['preview_url'];
+            var title = array['name'];
+            var cover = array['artwork_url_large'];
+            var artist = array['artist_display_name'];
+            var apple_music = array['apple_music_view_url'];
+            var itunes = array['itunes_view_url'];
+
+
+            //Create audio object
+            audio = new Audio(song);
+            audio.volume = volume;
+
+
+            //Insert audio info
+            afterSongEnd();
+            $('.audio-song-artists').text(artist);
+            $('.audio-song-title').text(title);
+            $('#audio-itunes').attr('href', itunes);
+            $('#audio-apple-music').attr('href', apple_music);
+            $('#audio-small-apple-music').attr('href', apple_music);
+
+            //Insert song cover
+            $('img.audio-song-image').attr('src', cover);
+
+
+        }
+
+        //Play button
+        $('#play').click(function () {
+            audio.play();
+            afterPlay();
+            afterSongEnd();
+            showDuration();
+
+        });
+
+        //Pause button
+        $('#pause,#pause_song').click(function () {
+            audio.pause();
+            hideGifPlayer();
+
+        });
+
+
+        //Playlist song click
+        function playSelectedSong() {
+            $('#audio-player').show();
+            marginFooterAudio();
+            if (audio) {
+                audio.pause();
+            }
+            initAudio(song);
+            afterPlay();
+            $('#play').hide();
+            $('#pause').show();
+            audio.play();
+            showDuration();
+            afterSongEnd();
+        }
+
+
+        //Time/Duration
+        function showDuration() {
+            $(audio).bind('timeupdate', function () {
+                //Get hours and minutes
+                var s = parseInt(audio.currentTime % 60);
+                var m = parseInt(audio.currentTime / 60) % 60;
+                if (s < 10) {
+                    s = '0' + s;
+                }
+                $('#duration').html(m + ':' + s);
+                var value = 0;
+                if (audio.currentTime > 0) {
+                    value = Math.floor((100 / audio.duration) * audio.currentTime);
+                }
+                $('#ex1Slider .slider-selection ').css('width', value + '%');
+                $('#ex1Slider .slider-handle').css('left', value + '%');
+            });
+        }
+
+        function afterSongEnd() {
+            $(audio).on('ended', function () {
+                initAudio(song);
+                $('#play').show();
+                $('#pause').hide();
+                $('#ex1Slider .slider-selection ').css('width', 0 + '%');
+                $('#ex1Slider .slider-handle').css('left', 0 + '%');
+                $('#duration').html('0:00');
+                showDuration();
+                afterSongEnd();
+            })
+        }
+
+
+        $(document).ready(function () {
+            $('#ex1').slider({
+                formatter: function (value) {}
+            });
+        });
+
+
+
+        $('#ex1').on('slideStop', function (event) {
+            audio.currentTime = event.value;
+        });
+
+
+        $('#sound').on('click', function (event) {
+
+            if (audio.volume === 0) {
+                audio.volume = volume;
+
+                $('#ex2Slider .slider-selection ').css('width', audio.volume * 100 + '%');
+                $('#ex2Slider .slider-handle').css('left', audio.volume * 100 + '%');
+                return 0;
+            }
+            audio.volume = 0;
+            $('#ex2Slider .slider-selection ').css('width', 0 + '%');
+            $('#ex2Slider .slider-handle').css('left', 0 + '%');
+
+
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-submenu').hover(function (e) {
+                console.log("elemento", $(this).children('ul'));
+                $(this).children('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        });
+    </script>
+    <script defer="defer">
+        function showActiveTabs(elementId, key, position) {
+            var style = "song-dropdown-options-active";
+            //Activate class on elementId and remove on others
+            $("#share-tab" + key + position).removeClass(style);
+            $("#stats-tab" + key + position).removeClass(style);
+            $("#go-to-tab" + key + position).removeClass(style);
+            $('#' + elementId).addClass(style);
+        }
+    </script>
+    <script defer="defer">
+        $(document).ready(function () {
+            $("img").unveil(200);
+        });
+    </script>
+    <script defer="defer">
+        $(document).ready(function () {
+            $('#ex2').slider({
+                formatter: function (value) {
+
+                }
+            });
+        });
+
+        $('#ex2').on('change', function (event) {
+            console.log('changed');
+            if (audio) {
+                audio.volume = event.value.newValue / 100;
+            }
+        });
+    </script>
+    <script defer="defer">
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+    <script defer="defer">
+        function addRemoveCaret(id) {
+
+            var element = document.getElementById(id);
+
+            if (element.classList.contains("fa-caret-down")) {
+                element.classList.remove("fa-caret-down");
+                element.classList.add("caret-active");
+                element.classList.add("fa-caret-up");
+            } else {
+                element.classList.remove("caret-active");
+                element.classList.remove("fa-caret-up");
+                element.classList.add("fa-caret-down");
+            }
+        }
+    </script>
+    <script>
+        function showDropdown(elementId) {
+            var x = document.getElementById(elementId);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        document.getElementById("search").addEventListener("click", redSearch, false);
+
+        function redSearch() {
+            var x = document.getElementById("search");
+            if (x.classList.contains('search-icon')) {
+                x.classList.remove("search-icon");
+                x.classList.add("box-shadow-0");
+            } else {
+                x.classList.add("search-icon");
+            }
+        }
+    </script>
+    <script>
+        document.getElementById("search").addEventListener("click", showSearchContainer, false);
+
+        function showSearchContainer() {
+
+            var x = document.getElementById("search-box");
+
+            if (x.style.display === "none" || getComputedStyle(x, null).display === 'none') {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        function marginFooterAudio() {
+            if (screen.width >= 576) {
+                $("footer").css('margin-bottom', 68 + 'px');
+                return 0;
+            }
+            $("footer").css('margin-bottom', 55 + 'px');
+
+        }
+    </script><iframe
+        src="Botella%20Tras%20Botella%20-%20Conjunto%20Azabache%20en%20las%20listas%20Top%20Charts_files/container_003.htm"
+        style="visibility: hidden; display: none;"></iframe><iframe
+        src="Botella%20Tras%20Botella%20-%20Conjunto%20Azabache%20en%20las%20listas%20Top%20Charts_files/aframe.htm"
+        style="display: none;" width="0" height="0"></iframe>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="21px" viewBox="0 0 20 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>mdpi/01_Positive</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-21.1%" y="-21.1%" width="142.1%" height="142.1%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="1" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.302611451 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <linearGradient x1="35.8359024%" y1="6.60082938%" x2="107.688912%" y2="121.889369%" id="linearGradient-2">
+            <stop stop-color="#C672FC" offset="0%"/>
+            <stop stop-color="#B53636" offset="100%"/>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile3" transform="translate(-51.000000, -329.000000)">
+            <g id="1st_Topic" transform="translate(0.000000, 49.000000)">
+                <g id="01_Top_100_Itunes_Songs" transform="translate(10.000000, 78.000000)">
+                    <g id="04_Tab" transform="translate(0.000000, 198.000000)">
+                        <g id="01_Positive" transform="translate(41.000000, 4.000000)">
+                            <g id="Group" filter="url(#filter-1)">
+                                <path d="M9.5,0 L19,0 L19,19 L9.5,19 C4.25329488,19 6.42536064e-16,14.7467051 0,9.5 C-6.42536064e-16,4.25329488 4.25329488,9.63804095e-16 9.5,0 Z" id="Rectangle" fill="url(#linearGradient-2)"/>
+                                <text id="NEW" fill="#FFFFFF" font-family="Roboto-Bold, Roboto" font-size="7" font-weight="bold">
+                                    <tspan x="2" y="12">NEW</tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

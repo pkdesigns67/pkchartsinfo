@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-14.3%" y="-14.3%" width="128.6%" height="128.6%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="1" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.302611451 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="35.8410921%" y1="6.60082938%" x2="107.667775%" y2="121.889369%" id="linearGradient-2">
+            <stop stop-color="#C672FC" offset="0%"></stop>
+            <stop stop-color="#B53636" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="_1200_00_C_Home_Detail" transform="translate(-77.000000, -985.000000)">
+            <g id="1st_Topic" transform="translate(12.000000, 448.000000)">
+                <g id="01_Top_100_Itunes_Songs" transform="translate(0.000000, 344.000000)">
+                    <g id="04_Tab" transform="translate(0.000000, 188.669604)">
+                        <g id="01_Positive" transform="translate(65.706204, 4.387665)">
+                            <g id="Group" filter="url(#filter-1)">
+                                <path d="M10,0 L27.4178832,0 L27.4178832,27.4229075 L13.7114537,27.4229075 C6.13882694,27.4229075 9.27379317e-16,21.2840805 0,13.7114537 L0,10 C1.10000309e-15,4.4771525 4.4771525,1.01453063e-15 10,0 Z" id="Rectangle" fill="url(#linearGradient-2)"></path>
+                                <text id="NUEVO" fill="#FFFFFF" font-family="Roboto-Bold, Roboto" font-size="7" font-weight="bold">
+                                    <tspan x="2.29379562" y="16.3361929">NUEVO</tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
